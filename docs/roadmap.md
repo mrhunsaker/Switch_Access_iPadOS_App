@@ -77,6 +77,14 @@ Each activity must have acceptance criteria, accessible interaction paths, and t
 
 **Acceptance criteria:** `xcrun swift-format lint --strict --recursive SwitchPlay` completes successfully using the checked-in `.swift-format` configuration, and the GitHub Actions run is green. The workflow is implemented, but its first runs failed on pre-existing source-format violations; format the Swift files and rerun before checking this item. This check is separate from Xcode compilation and all device/accessibility validation.
 
+## Documentation and toolchain maintenance
+- [ ] **DOC-01** — Reconcile repository requirements, documentation, prompts, and toolchain versions.
+- [ ] **DOC-02** — Evaluate migration from MkDocs Material to Zensical before the upstream Material end-of-life date (2027-05-05).
+
+**DOC-01 acceptance criteria:** `docs/repository-audit.md` records the audit scope, resolved contradictions, current official tool versions, deliberate compatibility decisions, and outstanding verification. The updated MkDocs strict build and Pages deployment must pass before marking complete.
+
+**DOC-02 acceptance criteria:** Compare Zensical with the current MkDocs Material site for theme, navigation, search, Markdown extensions, strict build, and GitHub Pages deployment; document a migration decision and implementation plan before the upstream end-of-life date.
+
 ## Prioritization rule
 Do not expand activity count at the expense of a reliable accessibility foundation. A small number of well-tested, individually configurable activities is preferable to many unvalidated screens.
 
