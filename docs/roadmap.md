@@ -73,9 +73,9 @@ Each activity must have acceptance criteria, accessible interaction paths, and t
 - [ ] **REL-06** — Publish known limitations and release documentation.
 
 ## Contributor engineering checks
-- [ ] **CI-01** — Verify the Swift formatting GitHub Actions workflow on a pull request or manual dispatch; resolve diagnostics and document the passing run.
+- [x] **CI-01** — Verify the Swift formatting GitHub Actions workflow on a pull request or manual dispatch; resolve diagnostics and document the passing run.
 
-**Acceptance criteria:** `xcrun swift-format lint --strict --recursive SwitchPlay` completes successfully using the checked-in `.swift-format` configuration, and the GitHub Actions run is green. The workflow is implemented, but its first runs failed on pre-existing source-format violations; format the Swift files and rerun before checking this item. This check is separate from Xcode compilation and all device/accessibility validation.
+**Acceptance criteria met:** all five Swift source files were reformatted using the checked-in `.swift-format` configuration. The pinned swift-format 604.0.0 GitHub Actions run [42404181569](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/actions/runs/42404181569) passed strict recursive lint. This check is separate from Xcode compilation and all device/accessibility validation.
 
 ## Documentation and toolchain maintenance
 - [x] **DOC-01** — Reconcile repository requirements, documentation, prompts, and toolchain versions.
