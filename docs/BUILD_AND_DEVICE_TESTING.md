@@ -2,12 +2,12 @@
 
 ## Why a Mac is required
 
-Xcode, the iPadOS SDK, code signing, and native iPad deployment require macOS. Windows is suitable for editing Swift source and managing Git, but it cannot compile or sign this native iPadOS project. The next step for a Windows-only workflow is to arrange access to a Mac (borrowed, personally owned, or a reputable hosted Mac environment).
+Xcode, the iPadOS SDK, code signing, and native iPad deployment require macOS. Use a currently supported Xcode release compatible with the Mac and target iPadOS version; this repository does not pin a specific Xcode release. Windows is suitable for editing Swift source and managing Git, but it cannot compile or sign this native iPadOS project. The next step for a Windows-only workflow is to arrange access to a Mac (borrowed, personally owned, or a reputable hosted Mac environment).
 
 ## First build on macOS
 
 1. Install Xcode from the Mac App Store and open it once.
-2. Install XcodeGen. With Homebrew: `brew install xcodegen`.
+2. Install XcodeGen and the repository's current Swift formatter. With Homebrew: `brew install xcodegen swift-format`. Check `swift-format --version` against the version recorded in the repository audit.
 3. Clone the repository:
    ```sh
    git clone https://github.com/mrhunsaker/Switch_Access_iPadOS_App.git
