@@ -6,6 +6,39 @@
 
 This is the living snapshot of what exists, what is verified, and what should happen next. Update it whenever work is completed or priorities change.
 
+## Stage and task tracker
+
+Status is evidence-based. This tracker is the live summary; detailed acceptance criteria remain in the [roadmap](roadmap.md).
+
+| Stage | Stage status | Task IDs | Current state / next action |
+| --- | --- | --- | --- |
+| 0 — Establish a native build | BLOCKED | ST0-01–ST0-07 | ST0-01 requires user to obtain Mac access; subsequent setup/build tasks depend on it. |
+| 1 — Verify existing prototype | BLOCKED | ST1-01–ST1-07 | Requires Stage 0 build/install and physical iPad access. |
+| 2 — CVI accessibility foundation | NOT_STARTED | CVI-01–CVI-07 | Requires participatory requirements work; do not finalize universal visual defaults. |
+| 3 — Core activities | NOT_STARTED | ACT-01–ACT-06 | Begin after accessibility foundation and activity acceptance criteria are established. |
+| 4 — Music experiences | NOT_STARTED | MUS-01–MUS-05 | Piano source exists but remains unbuilt and untested; other music modules are planned. |
+| 5 — Personalization and reliability | NOT_STARTED | PER-01–PER-05 | Planned; no completion evidence recorded. |
+| 6 — Field evaluation and release readiness | NOT_STARTED | REL-01–REL-06 | Requires participatory evaluation, physical hardware testing, defect resolution, and evidence review. |
+
+### Task status details
+
+| Task ID | Status | Owner | Evidence / next action |
+| --- | --- | --- | --- |
+| ST0-01 | BLOCKED | User | Obtain Mac access; report macOS and Xcode versions. |
+| ST0-02–ST0-07 | BLOCKED | Joint | Depend on ST0-01; complete setup, project generation, signing, build, install, and launch in sequence. |
+| ST1-01–ST1-07 | BLOCKED | Joint | Await successful Stage 0 build and physical iPad validation. |
+| CVI-01–CVI-07 | NOT_STARTED | Joint | Plan requirements review and participatory design; document decisions and evidence. |
+| ACT-01–ACT-06 | NOT_STARTED | Joint | Define activity-specific acceptance criteria before implementation. |
+| MUS-01–MUS-05 | IMPLEMENTED_UNVERIFIED / NOT_STARTED | Joint | Existing piano code is committed but uncompiled; remaining music features are planned. |
+| PER-01–PER-05 | NOT_STARTED | Joint | Define individual settings, persistence, and lifecycle requirements. |
+| REL-01–REL-06 | NOT_STARTED | Joint | Schedule after core features and accessibility validation are ready. |
+
+### Current next action
+
+**USER ACTION REQUIRED — ST0-01: Obtain access to a Mac with supported Xcode.**
+
+Confirm whether a Mac is available. If yes, report its macOS version and Xcode version. Until this prerequisite is confirmed, the native build stage remains blocked and no build or device-compatibility claim can be made.
+
 ## Implemented in the repository
 
 | Area | Current contents | Verification |
