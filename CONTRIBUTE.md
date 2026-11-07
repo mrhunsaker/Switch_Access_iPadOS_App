@@ -46,7 +46,7 @@ The native app requires macOS and Xcode to build, sign, and deploy. Windows can 
 Include device model, iPadOS version, app commit, switch hardware/interface, assignments, scanning style, steps, and observed outcomes. Never publish names, faces, recordings, medical records, or other identifying participant information in issues or pull requests.
 
 ## Documentation development
-Install Python 3.10 or later, then run:
+Install Python 3.11 or later, then run:
 
 ```sh
 python -m pip install -r requirements-docs.txt
@@ -55,6 +55,6 @@ mkdocs build --strict
 ```
 
 ## Code style
-All Swift contributions must follow the repository [CODE_STYLE.md](CODE_STYLE.md) and the checked-in [.swift-format](.swift-format) configuration. Run `swift-format lint --strict --recursive SwitchPlay` before submitting and report the result. The guide covers Swift naming/API design, file organization, SwiftUI state and view composition, error handling, concurrency, audio lifecycle, accessibility semantics, documentation, and testing. Do not introduce a competing formatter or change formatter settings without review. Formatting and linting do not replace compilation, tests, physical-device checks, or participatory accessibility evaluation.
+All Swift contributions must follow the repository [CODE_STYLE.md](CODE_STYLE.md) and the checked-in [.swift-format](.swift-format) configuration. Use the same `swift-format` release as CI (currently 604.0.0; see the repository audit for the as-of date). Run `swift-format lint --strict --recursive SwitchPlay` before submitting and report the result. The guide covers Swift naming/API design, file organization, SwiftUI state and view composition, error handling, concurrency, audio lifecycle, accessibility semantics, documentation, and testing. Do not introduce a competing formatter or change formatter settings without review. Formatting and linting do not replace compilation, tests, physical-device checks, or participatory accessibility evaluation.
 
 For suspected vulnerabilities, follow [SECURITY.md](SECURITY.md) and do not post details publicly.
