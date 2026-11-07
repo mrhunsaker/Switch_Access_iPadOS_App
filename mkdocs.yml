@@ -42,6 +42,7 @@ nav:
       - CVI-centered principles: accessibility-principles.md
       - Switch Control design: ACCESSIBILITY_DESIGN.md
   - Development:
+      - Swift code style: ../CODE_STYLE.md
       - Environment setup: development-environment.md
       - Build and device testing: BUILD_AND_DEVICE_TESTING.md
       - Phase 1 acceptance: PHASE_1_ACCEPTANCE.md
