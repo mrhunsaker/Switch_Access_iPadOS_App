@@ -16,11 +16,12 @@ This file records notable project changes. Planned work must not be described as
 - Reconciled the three-switch prompt mapping to specify Manual Scanning.
 - Clarified P00 task metadata requirements so active tasks receive detailed dependencies, acceptance criteria, verification, evidence, and next actions while unstarted tasks remain concise.
 - Fixed escaped newline artifacts in Markdown documentation and consolidated this Unreleased section.
+- Reformatted all five Swift source files to comply with the checked-in `.swift-format` configuration; no intentional runtime behavior changes.
 
 ### Verification status
 - The prior documentation build/deploy run 42402479023 succeeded before the action-version upgrades. The upgraded workflow passed strict build, artifact upload, and Pages deployment in run 42403662715 using Python 3.15.2, MkDocs Material 9.8.0, and current Actions.
-- Swift formatting workflow runs 42402374179, 42402425701, 42402478967, and 42403314021 failed at strict lint on existing source-format violations. Runs 42403314021, 42403378523, 42403419130, 42403480732, 42403519607, 42403559391, and 42403662776 confirmed that swift-format 604.0.0 installed and passed the version check; source lint then failed. A passing lint run is still required.
-- No Xcode build, app runtime test, physical iPad test, physical-switch test, or CVI participatory evaluation was performed as part of this audit.
+- Swift formatting CI run [42404181569](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/actions/runs/42404181569) passed using pinned swift-format 604.0.0: version verification and strict recursive lint both succeeded after reformatting the five Swift source files.
+- No Xcode build, app runtime test, physical iPad test, physical-switch test, or CVI participatory evaluation was performed as part of this work.
 
 ## 2026-11-07 — Swift contributor standards
 

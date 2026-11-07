@@ -12,7 +12,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 
 | Stage | Stage status | Task IDs | Current state / next action |
 | --- | --- | --- | --- |
-| Contributor CI | BLOCKED | CI-01 | Workflow is implemented and now pins swift-format 604.0.0. Earlier strict lint runs failed on existing source formatting violations; run the updated workflow and resolve diagnostics. |
+| Contributor CI | VERIFIED_COMPLETE | CI-01 | All five Swift source files reformatted; pinned swift-format 604.0.0 strict lint passed in run [42404181569](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/actions/runs/42404181569). |
 | 0 — Establish a native build | BLOCKED | ST0-01–ST0-07 | ST0-01 requires user to obtain Mac access; subsequent setup/build tasks depend on it. |
 | 1 — Verify existing prototype | BLOCKED | ST1-01–ST1-07 | Requires Stage 0 build/install and physical iPad access. |
 | 2 — CVI accessibility foundation | NOT_STARTED | CVI-01–CVI-07 | Requires participatory requirements work; do not finalize universal visual defaults. |
@@ -26,7 +26,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 
 | Task ID | Status | Owner | Evidence / next action |
 | --- | --- | --- | --- |
-| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow now installs and asserts swift-format 604.0.0. Runs 42402374179, 42402425701, 42402478967, 42403314021, 42403378523, and latest run 42403662776 failed strict lint on existing source formatting. Run 42403419130 installed and verified swift-format 604.0.0 before reporting indentation, line-length, and trailing-comma violations. Format `SwitchPlay`, rerun, and record a passing run. |
+| CI-01 | VERIFIED_COMPLETE | Joint | Reformatted all five Swift source files with the repository configuration. Pinned swift-format 604.0.0 version verification and strict recursive lint passed in run [42404181569](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/actions/runs/42404181569). Xcode compilation and device testing remain separate, unverified tasks. |
 | ST0-01 | BLOCKED | User | Obtain Mac access; report macOS and Xcode versions. |
 | ST0-02–ST0-07 | BLOCKED | Joint | Depend on ST0-01; complete setup, project generation, signing, build, install, and launch in sequence. |
 | ST1-01–ST1-07 | BLOCKED | Joint | Await successful Stage 0 build and physical iPad validation. |
@@ -56,10 +56,10 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Accessibility planning | Switch Control design contract and testing guides | Documentation exists; behavior unverified |
 | CVI prompt library | 15 LLM prompts, including mandatory P00 tracking prompt and Swift style checks | JSON committed |
 | Documentation site | MkDocs Material 9.8.0, pinned requirements, and GitHub Pages workflow | Strict build, artifact upload, and Pages deployment passed in run 42403662715 using Python 3.15.2 and current Actions |
-| Swift contributor standards | CODE_STYLE.md, root .swift-format, and pinned 604.0.0 CI workflow | Workflow updated; source lint remains failing pending reformat |
+| Swift contributor standards | CODE_STYLE.md, root .swift-format, and pinned 604.0.0 CI workflow | All five Swift files formatted; strict CI lint passed in run 42404181569 |
 
 ## Not yet verified
-- The latest observed Swift formatting run (42403662776) installed and verified swift-format 604.0.0 successfully, then failed strict lint on existing source-format violations. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
+- The Swift source has passed strict recursive lint with pinned swift-format 604.0.0 in run [42404181569](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/actions/runs/42404181569).
 - The updated documentation workflow passed strict build, Pages artifact upload, and deployment in run 42403559310 with Python 3.15.2, MkDocs Material 9.8.0, and the upgraded Actions.
 - Whether the source compiles with the current Xcode and iPadOS SDK remains unverified.
 - Whether the app installs and launches on a physical iPad remains unverified.
@@ -69,7 +69,7 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 - Whether audio behavior is reliable across routes and interruptions remains unverified.
 
 ## Immediate next steps
-1. Format the existing Swift files with the checked-in `.swift-format` configuration using swift-format 604.0.0, then rerun CI-01 until strict lint passes.
+1. Arrange access to a Mac with a supported Xcode installation.
 2. Arrange access to a Mac with a supported Xcode installation.
 3. Clone the repository, install XcodeGen, and generate the Xcode project.
 4. Configure a unique bundle identifier and signing team.
