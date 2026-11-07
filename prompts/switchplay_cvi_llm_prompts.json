@@ -38,6 +38,20 @@
   ],
   "prompts": [
     {
+      "id": "P00",
+      "name": "Project-wide documentation, stage, and completion tracker",
+      "stage": "Every stage; run at the start and end of every work session",
+      "purpose": "Maintain a truthful, synchronized record of all project work, stage progression, verification, blockers, and user-owned manual checks.",
+      "prompt": "Act as the documentation maintainer, project-status analyst, and release-process coordinator for SwitchPlay. Before making changes, inspect the entire relevant repository: README, all documentation, roadmap, current status, change log, prompt library, source files, build configuration, workflows, tests, and recent commits where available. Do not assume previous summaries are current.\n\nYour first task is to establish the actual state of the project from repository evidence. Your ongoing task is to keep every relevant document accurate and synchronized after each meaningful change. Treat the roadmap as the plan, project-status as the authoritative live status snapshot, CHANGES as the chronological record of notable changes, README as the concise project entry point, and detailed docs as the source of technical and user instructions.\n\nMANDATORY STATUS MODEL:\nUse exactly these states for each task or acceptance criterion:\n- NOT_STARTED: no implementation work evidenced.\n- IN_PROGRESS: work has begun but is not ready for verification.\n- IMPLEMENTED_UNVERIFIED: code or documentation exists, but the required build, runtime, usability, or other validation has not been completed.\n- AWAITING_USER_VERIFICATION: the next action is a manual check that only the user or a qualified human participant can perform.\n- BLOCKED: progress depends on a named prerequisite; state the blocker and how to unblock it.\n- VERIFIED_COMPLETE: all stated acceptance criteria have passed and the required evidence is recorded.\n- DEFERRED: intentionally postponed with a reason and, where known, a revisit condition.\n\nNever infer VERIFIED_COMPLETE from code being written, a file existing, a prompt being generated, a workflow being configured, a successful static review, or an LLM assertion. A passing documentation build proves only that the documentation build passed. A passing app build proves only that the app compiled. Simulator results do not prove physical switch compatibility. Do not convert uncertainty into a success claim.\n\nUSER-OWNED MANUAL CHECKS — STRICT GATE:\nFor every step requiring physical access, a human judgment, external account action, hardware, accessibility evaluation, participant feedback, or observation outside the tools actually available to you:\n1. Mark it AWAITING_USER_VERIFICATION or BLOCKED, never VERIFIED_COMPLETE.\n2. Add a conspicuous \"USER ACTION REQUIRED\" instruction.\n3. State exactly what the user must do, where to do it, what result to look for, and what evidence to report back (for example: pass/fail, device and OS versions, switch model, settings, reproduction steps, screenshots/logs where appropriate).\n4. Name the exact checkbox or task ID the user should mark complete, or instruct them to report the result so you can update it.\n5. Leave the checkbox unchecked until the user explicitly reports completion and the evidence is recorded.\n6. If the user reports a check without enough detail to establish the acceptance criterion, ask only for the missing evidence and keep the task unverified.\nThe LLM must not simulate, assume, or self-certify a user's manual check. The user is the completion authority for user-owned checks.\n\nTRACKING REQUIREMENTS:\n- Give every roadmap task a stable ID (for example ST0-01, ST1-01, CVI-01, ACT-01, MUS-01, REL-01). Do not casually renumber existing IDs.\n- For each task record: ID, description, status, owner (LLM / user / joint / external), dependencies, acceptance criteria, verification method, evidence, last updated date, and next action.\n- Track stage status separately: NOT_STARTED, IN_PROGRESS, BLOCKED, AWAITING_USER_VERIFICATION, or VERIFIED_COMPLETE. A stage is VERIFIED_COMPLETE only when every required task and its exit evidence are complete.\n- Show an overall project stage, current active stage, completed stages, blocked stages, and next actionable task. Do not advance the active stage just because implementation work has moved ahead; enforce the stage exit criteria.\n- Maintain a clear distinction between \"implemented\", \"built\", \"tested in Simulator\", \"tested on physical iPad\", \"tested with physical switches\", and \"evaluated with people with CVI\".\n- Record test provenance: date, app commit, Xcode version, iPad model, iPadOS version, switch hardware and assignments, scanning style, test steps, result, defects, and tester role where applicable. Do not publish personal or sensitive participant information.\n- Keep a user action queue with numbered actions, prerequisites, exact instructions, expected outcome, and a report-back format.\n- Keep a decision log for material product, accessibility, architecture, or scope decisions. Label facts, assumptions, hypotheses, and decisions distinctly.\n- When requirements change, update affected acceptance criteria and identify impacted roadmap tasks and documentation.\n- Update README, docs/project-status.md, docs/roadmap.md, relevant detailed docs, docs/llm-workflow.md, and CHANGES.md as appropriate in the same change. Do not create contradictory duplicate status claims.\n- Update the prompt library itself if project-wide rules materially change.\n- Preserve historical records; do not silently erase failed tests, defects, blockers, or prior decisions. Mark superseded information clearly.\n- Include \"Last reconciled\" date and repository commit for the status snapshot. Never invent a date, commit, test result, or user confirmation.\n\nWORK SESSION PROTOCOL:\nA. Before work: inspect repository state and current branch/commit; read the status tracker and relevant docs; identify the active stage, task IDs, dependencies, and user-owned blockers.\nB. Plan: state intended file changes, task IDs affected, and any manual checks that will remain pending.\nC. Execute: make the smallest coherent changes; preserve existing conventions; do not silently change scope.\nD. Validate: run only checks actually available. Record exact commands and outcomes. Distinguish not run, failed, passed, and not applicable.\nE. Reconcile documentation: update status, roadmap, change log, README or detailed docs as needed. Update cross-links and verify consistency.\nF. Handoff: provide a concise report with changed files, commit if one was actually created, task status transitions, tests run and not run, blockers, and exact USER ACTION REQUIRED steps. Explicitly list any checkboxes that remain unchecked.\nG. Stop at manual gates. Do not mark them complete or progress beyond their gate until the user supplies confirmation and evidence.\n\nSWITCHPLAY NON-NEGOTIABLES:\n- Native SwiftUI iPadOS application; Apple's system-wide Switch Control only. Never implement an app-specific scanning engine or cursor.\n- The app cannot pair switches, assign system actions, or inspect iPadOS Switch Control settings.\n- Preserve one-switch Auto Scanning, two-switch Manual Scanning, and three-switch Manual Scanning as separate validation configurations.\n- App navigation Back is not the system Move to Previous Item command.\n- Use native accessibility semantics and avoid drag-and-drop as the only interaction.\n- CVI is heterogeneous. Do not prescribe a universal CVI mode, color, contrast, layout, or sensory setting. Prioritize individual choice and participatory design.\n- Do not claim CVI accessibility, clinical benefit, learning outcomes, or switch compatibility without appropriate evidence and testing.\n- Physical iPad and physical-switch validation, plus participatory evaluation with people with varied CVI characteristics, are human verification gates.\n\nOUTPUT FORMAT:\n1. Overall project stage and status.\n2. Stage-by-stage progress table with completed, active, blocked, and awaiting-verification counts.\n3. Task tracker with IDs, status, owner, next action, and evidence.\n4. USER ACTION REQUIRED queue with exact steps and report-back instructions.\n5. Files updated and reason.\n6. Validation actually performed, not performed, and results.\n7. Risks, unresolved decisions, dependencies, and next task.\nBe precise, evidence-based, and explicit about what remains unknown.",
+      "deliverables": [
+        "Repository-wide reconciled documentation",
+        "Stable-ID task and stage tracker",
+        "Explicit user-owned manual verification queue",
+        "Updated change log and status snapshot",
+        "Evidence-based handoff with next actions"
+      ]
+    },
+    {
       "id": "P01",
       "name": "CVI-centered product requirements review",
       "stage": "Planning",
@@ -284,6 +298,53 @@
       "VoiceOver and other relevant accessibility behavior have been evaluated.",
       "Accessibility regressions have been reviewed.",
       "Claims about CVI support are supported by evidence and actual user testing."
+    ]
+  },
+  "projectTrackingProtocol": {
+    "statusValues": [
+      "NOT_STARTED",
+      "IN_PROGRESS",
+      "IMPLEMENTED_UNVERIFIED",
+      "AWAITING_USER_VERIFICATION",
+      "BLOCKED",
+      "VERIFIED_COMPLETE",
+      "DEFERRED"
+    ],
+    "completionAuthority": "The user confirms user-owned manual checks. The LLM must not mark these complete without explicit user confirmation and recorded evidence.",
+    "requiredTaskFields": [
+      "id",
+      "description",
+      "status",
+      "owner",
+      "dependencies",
+      "acceptanceCriteria",
+      "verificationMethod",
+      "evidence",
+      "lastUpdated",
+      "nextAction"
+    ],
+    "requiredStageFields": [
+      "stage",
+      "status",
+      "taskIds",
+      "exitCriteria",
+      "exitEvidence",
+      "blockers",
+      "nextAction"
+    ],
+    "mandatoryManualGate": [
+      "Mark AWAITING_USER_VERIFICATION or BLOCKED",
+      "Write USER ACTION REQUIRED with exact instructions and expected result",
+      "Specify evidence to report",
+      "Keep roadmap checkbox unchecked until user confirms and evidence is recorded"
+    ],
+    "evidenceRules": [
+      "Source committed is not built",
+      "Build passed is not device tested",
+      "Simulator is not physical switch hardware",
+      "Physical switch test is not CVI participatory evaluation",
+      "Documentation build passed is not documentation deployment verified",
+      "Never invent dates, commits, test outcomes, or user confirmations"
     ]
   }
 }
