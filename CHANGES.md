@@ -8,7 +8,8 @@ This file records notable project changes. Planned work must not be described as
 - GitHub Actions Swift formatting workflow that runs strict `swift-format` lint on relevant pull requests, pushes to `main`, and manual dispatches.
 
 ### Status
-- The workflow is committed but its first run has not yet been verified. It checks formatting only; it does not build or test the iPadOS app.
+- The workflow runs on every pull request and push to `main`, plus manual dispatch. Initial runs 42402374179 and 42402425701 successfully found Swift-format 6.3.0 but failed strict lint because existing source files have formatting violations (notably four-space indentation versus the configured two spaces, plus line-length, import-order, and trailing-comma diagnostics).
+- CI-01 remains open until the Swift source is formatted and a subsequent workflow run passes. The workflow checks formatting only; it does not build or test the iPadOS app.
 
 ### Added
 - CVI-focused LLM development prompt library in `prompts/switchplay_cvi_llm_prompts.json`.
