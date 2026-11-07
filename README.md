@@ -39,6 +39,7 @@ The project documentation is published with MkDocs Material through GitHub Actio
 The LLM prompt library includes **P00**, the required project-wide documentation and progress-tracking prompt. It enforces stable task IDs, explicit stage statuses, synchronized documentation, and user-confirmed manual verification gates. See the [LLM workflow](docs/llm-workflow.md) before using other prompts.
 
 See:
+- [Swift code style and contributor standards](CODE_STYLE.md)
 - [Development roadmap](docs/DEVELOPMENT_ROADMAP.md)
 - [Build and physical-device testing](docs/BUILD_AND_DEVICE_TESTING.md)
 - [Accessibility architecture](docs/ACCESSIBILITY_DESIGN.md)
