@@ -59,12 +59,12 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 ## Not yet verified
 - The latest observed Swift formatting run (42402478967) failed strict lint. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
 - The updated documentation workflow has not yet been verified after upgrading its GitHub Actions to current major releases and pinning MkDocs Material 9.8.0. Previous build/deploy run 42402479023 succeeded.
-- The source compiles with the current Xcode and iPadOS SDK.
-- The app installs and launches on a physical iPad.
-- Interactive controls work through system-wide Switch Control.
-- One-, two-, and three-switch workflows work with representative physical hardware.
-- Visual presentation works for people with different CVI characteristics.
-- Audio behavior is reliable across routes and interruptions.
+- Whether the source compiles with the current Xcode and iPadOS SDK remains unverified.
+- Whether the app installs and launches on a physical iPad remains unverified.
+- Whether interactive controls work through system-wide Switch Control remains unverified.
+- Whether one-, two-, and three-switch workflows work with representative physical hardware remains unverified.
+- Whether visual presentation works for people with different CVI characteristics remains unverified.
+- Whether audio behavior is reliable across routes and interruptions remains unverified.
 
 ## Immediate next steps
 1. Format the existing Swift files with the checked-in `.swift-format` configuration using swift-format 604.0.0, then rerun CI-01 until strict lint passes.
