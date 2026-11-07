@@ -1,5 +1,9 @@
 # Development roadmap
 
+**Tracking rule:** Every task must have a stable ID and a status in `docs/project-status.md`. A checked box means the required acceptance criteria and evidence are complete—not merely that code was written. Tasks requiring a Mac, physical iPad, physical switches, human judgment, or participant feedback are user-owned verification gates. The LLM must leave those boxes unchecked and list exact instructions under **USER ACTION REQUIRED** until the user confirms the result and evidence is recorded. See [LLM workflow](llm-workflow.md).
+
+**Status vocabulary:** `NOT_STARTED`, `IN_PROGRESS`, `IMPLEMENTED_UNVERIFIED`, `AWAITING_USER_VERIFICATION`, `BLOCKED`, `VERIFIED_COMPLETE`, `DEFERRED`.
+
 This is the living forward plan. It extends the original [technical roadmap](DEVELOPMENT_ROADMAP.md) and prioritizes CVI-centered accessibility before feature expansion.
 
 ## Stage 0 — Establish a native build
