@@ -14,6 +14,7 @@ This file records notable project changes. Planned work must not be described as
 - Pinned MkDocs Material to 9.8.0 and aligned documentation setup instructions with its Python 3.11+ requirement; documentation CI uses Python 3.12.
 - Clarified that the living roadmap and project-status page are authoritative; the original technical roadmap remains a high-level guide.
 - Reconciled the three-switch prompt mapping to specify Manual Scanning.
+- Clarified P00 task metadata requirements so active tasks receive detailed dependencies, acceptance criteria, verification, evidence, and next actions while unstarted tasks remain concise.
 - Fixed escaped newline artifacts in Markdown documentation and consolidated this Unreleased section.
 
 ### Verification status
