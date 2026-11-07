@@ -19,7 +19,7 @@ This file records notable project changes. Planned work must not be described as
 
 ### Verification status
 - The prior documentation build/deploy run 42402479023 succeeded before the action-version upgrades. The verification run for the upgraded workflow is pending.
-- Swift formatting workflow runs 42402374179, 42402425701, 42402478967, and 42403314021 failed at strict lint on existing source-format violations. Run 42403314021 confirmed that swift-format 604.0.0 installed and passed the version check; source lint then failed. A passing lint run is still required.
+- Swift formatting workflow runs 42402374179, 42402425701, 42402478967, and 42403314021 failed at strict lint on existing source-format violations. Runs 42403314021, 42403378523, and 42403419130 confirmed that swift-format 604.0.0 installed and passed the version check; source lint then failed. A passing lint run is still required.
 - No Xcode build, app runtime test, physical iPad test, physical-switch test, or CVI participatory evaluation was performed as part of this audit.
 
 ## 2026-11-07 — Swift contributor standards
