@@ -5,6 +5,12 @@ This file records notable project changes. Planned work must not be described as
 ## Unreleased
 
 ### Added
+- GitHub Actions Swift formatting workflow that runs strict `swift-format` lint on relevant pull requests, pushes to `main`, and manual dispatches.
+
+### Status
+- The workflow is committed but its first run has not yet been verified. It checks formatting only; it does not build or test the iPadOS app.
+
+### Added
 - CVI-focused LLM development prompt library in `prompts/switchplay_cvi_llm_prompts.json`.
 - MkDocs Material documentation source and GitHub Actions Pages publishing workflow.
 - Living project goals, status, roadmap, accessibility principles, development setup, and LLM workflow documentation.
