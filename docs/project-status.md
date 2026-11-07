@@ -48,8 +48,8 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Music | Eight synthesized piano notes using AVAudioEngine | Source committed; not built or audio-tested |
 | Project setup | XcodeGen specification targeting iOS 17+ | Not generated or built with Xcode |
 | Accessibility planning | Switch Control design contract and testing guides | Documentation exists; behavior unverified |
-| CVI prompt library | 15 LLM prompts, including mandatory P00 tracking prompt | JSON committed |
-| Documentation site | MkDocs Material configuration and Pages workflow | Workflow committed; deployment pending |
+| CVI prompt library | 15 LLM prompts, including mandatory P00 tracking prompt and Swift style checks | JSON committed |
+| Documentation site | MkDocs Material configuration and Pages workflow | Workflow committed; deployment pending |\n| Swift contributor standards | CODE_STYLE.md and root .swift-format configuration | Committed; formatter not yet run against source |
 
 ## Not yet verified
 - The source compiles with the current Xcode and iPadOS SDK.
