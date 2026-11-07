@@ -1,5 +1,7 @@
 # SwitchPlay development roadmap
 
+> **Status and planning authority:** This is the original high-level technical sequence. The living [Development roadmap](roadmap.md) is authoritative for task IDs, current priorities, and completion status; [Current project status](project-status.md) is authoritative for verified evidence. Use this file for technical phase guidance only. Where wording differs, follow the current roadmap and accessibility principles.
+
 This roadmap is the working sequence for developing SwitchPlay as a native iPadOS app. The central acceptance criterion is real operation through Apple's system-wide Switch Control scanning cursor, not a custom in-app scanner.
 
 ## Phase 0 — Environment and project setup
