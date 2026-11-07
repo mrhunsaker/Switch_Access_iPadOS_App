@@ -75,7 +75,7 @@ Each activity must have acceptance criteria, accessible interaction paths, and t
 ## Contributor engineering checks
 - [ ] **CI-01** — Verify the Swift formatting GitHub Actions workflow on a pull request or manual dispatch; resolve diagnostics and document the passing run.
 
-**Acceptance criteria:** `xcrun swift-format lint --strict --recursive SwitchPlay` completes successfully using the checked-in `.swift-format` configuration. This check is separate from Xcode compilation and all device/accessibility validation.
+**Acceptance criteria:** `xcrun swift-format lint --strict --recursive SwitchPlay` completes successfully using the checked-in `.swift-format` configuration, and the GitHub Actions run is green. The workflow is implemented, but its first runs failed on pre-existing source-format violations; format the Swift files and rerun before checking this item. This check is separate from Xcode compilation and all device/accessibility validation.
 
 ## Prioritization rule
 Do not expand activity count at the expense of a reliable accessibility foundation. A small number of well-tested, individually configurable activities is preferable to many unvalidated screens.
