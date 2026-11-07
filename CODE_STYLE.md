@@ -22,7 +22,7 @@ Prefer official Swift.org and Apple documentation for language and platform ques
 
 ## 2. Formatting parameters
 
-The repository root .swift-format file is the canonical formatter configuration.
+The repository root `.swift-format` file is the canonical formatter configuration. CI currently uses `swift-format` 604.0.0 (verified 2026-11-07); contributors should use the same release to avoid tool-version drift.
 
 | Parameter | Project setting |
 | --- | --- |
@@ -41,7 +41,10 @@ The repository root .swift-format file is the canonical formatter configuration.
 
 Run the formatter and linter from the repository root:
 
-    # Check the installed formatter version.
+    # Install the current project-pinned formatter on macOS with Homebrew.
+    brew install swift-format
+
+    # Check the installed formatter version (CI currently requires 604.0.0).
     swift-format --version
 
     # Format Swift source files in place.
@@ -50,7 +53,7 @@ Run the formatter and linter from the repository root:
     # Lint Swift source files; strict mode makes diagnostics fail the command.
     swift-format lint --strict --recursive SwitchPlay
 
-If swift-format is not installed, follow the installation instructions in the [swift-format repository](https://github.com/swiftlang/swift-format). Do not substitute a different formatter configuration without proposing and reviewing the change.
+If swift-format is not installed, follow the installation instructions in the [swift-format repository](https://github.com/swiftlang/swift-format). Keep the local version aligned with the version recorded in [the repository audit](docs/repository-audit.md); update both the CI pin and this guide together when deliberately upgrading. Do not substitute a different formatter configuration without proposing and reviewing the change.
 
 Formatting is not a substitute for compilation, tests, accessibility review, or physical-device testing. Record commands actually run and their results. Do not claim a check passed if it was not run.
 
@@ -179,4 +182,4 @@ If a rule conflicts with a documented platform constraint, compiler limitation, 
 - Add or adjust automated rules only when the team agrees on the policy.
 - Do not weaken the formatter or lint configuration just to make a failing change pass.
 
-This standard should evolve with the Swift toolchain and project needs. Review external links and formatter configuration when upgrading the Swift/Xcode toolchain.
+This standard should evolve with the Swift toolchain and project needs. Review external links and formatter configuration when upgrading the Swift/Xcode toolchain. Check official upstream release notes before changing tool versions, record the date/version evidence, and do not raise the deployment target or change Swift language mode without a separate compatibility decision and build evidence.
