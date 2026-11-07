@@ -6,8 +6,8 @@ SwitchPlay is a native SwiftUI iPadOS app. Building, signing, and deploying requ
 ## Required tools
 - A Mac that supports a current Xcode release.
 - Xcode installed and launched at least once.
-- XcodeGen and Git.
-- The current stable `swift-format` release used by CI (install with `brew install swift-format` on macOS; verify with `swift-format --version`).
+- XcodeGen 2.46.0 (current stable as of 2026-11-07) and Git.
+- The current stable `swift-format` release used by CI (install with `brew install swift-format` on macOS; verify with `swift-format --version`). The repository audit records the checked versions and as-of date.
 - An iPad for physical-device validation.
 - Compatible external switch hardware and interface for Switch Control testing.
 
@@ -15,7 +15,9 @@ SwitchPlay is a native SwiftUI iPadOS app. Building, signing, and deploying requ
 ```sh
 git clone https://github.com/mrhunsaker/Switch_Access_iPadOS_App.git
 cd Switch_Access_iPadOS_App
-brew install xcodegen
+brew install xcodegen swift-format
+xcodegen --version
+swift-format --version
 xcodegen generate
 open SwitchPlay.xcodeproj
 ```
