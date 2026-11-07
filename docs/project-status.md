@@ -17,7 +17,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | 2 — CVI accessibility foundation | NOT_STARTED | CVI-01–CVI-07 | Requires participatory requirements work; do not finalize universal visual defaults. |
 | 3 — Core activities | NOT_STARTED | ACT-01–ACT-06 | Begin after accessibility foundation and activity acceptance criteria are established. |
 | 4 — Music experiences | NOT_STARTED | MUS-01–MUS-05 | Piano source exists but remains unbuilt and untested; other music modules are planned. |
-| 5 — Personalization and reliability | NOT_STARTED | PER-01–PER-05 | Planned; no completion evidence recorded. |
+| 5 — Personalization and reliability | NOT_STARTED | PER-01–PER-06 | Planned; no completion evidence recorded. |
 | 6 — Field evaluation and release readiness | NOT_STARTED | REL-01–REL-06 | Requires participatory evaluation, physical hardware testing, defect resolution, and evidence review. |
 
 ### Task status details
@@ -30,7 +30,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | CVI-01–CVI-07 | NOT_STARTED | Joint | Plan requirements review and participatory design; document decisions and evidence. |
 | ACT-01–ACT-06 | NOT_STARTED | Joint | Define activity-specific acceptance criteria before implementation. |
 | MUS-01–MUS-05 | IMPLEMENTED_UNVERIFIED / NOT_STARTED | Joint | Existing piano code is committed but uncompiled; remaining music features are planned. |
-| PER-01–PER-05 | NOT_STARTED | Joint | Define individual settings, persistence, and lifecycle requirements. |
+| PER-01–PER-06 | NOT_STARTED | Joint | Define individual settings, persistence, and lifecycle requirements. |
 | REL-01–REL-06 | NOT_STARTED | Joint | Schedule after core features and accessibility validation are ready. |
 
 ### Current next action
@@ -48,7 +48,7 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Music | Eight synthesized piano notes using AVAudioEngine | Source committed; not built or audio-tested |
 | Project setup | XcodeGen specification targeting iOS 17+ | Not generated or built with Xcode |
 | Accessibility planning | Switch Control design contract and testing guides | Documentation exists; behavior unverified |
-| CVI prompt library | 14 LLM prompts and shared instructions | JSON committed |
+| CVI prompt library | 15 LLM prompts, including mandatory P00 tracking prompt | JSON committed |
 | Documentation site | MkDocs Material configuration and Pages workflow | Workflow committed; deployment pending |
 
 ## Not yet verified
