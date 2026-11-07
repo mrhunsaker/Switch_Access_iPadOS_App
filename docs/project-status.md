@@ -54,7 +54,8 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Project setup | XcodeGen specification targeting iOS 17+ | Not generated or built with Xcode |
 | Accessibility planning | Switch Control design contract and testing guides | Documentation exists; behavior unverified |
 | CVI prompt library | 15 LLM prompts, including mandatory P00 tracking prompt and Swift style checks | JSON committed |
-| Documentation site | MkDocs Material configuration and Pages workflow | Workflow committed; deployment pending |\n| Swift contributor standards | CODE_STYLE.md and root .swift-format configuration | Committed; automated lint workflow added; source lint result pending |
+| Documentation site | MkDocs Material 9.8.0, pinned requirements, and GitHub Pages workflow | Prior build/deploy run 42402479023 succeeded; verify again after action upgrades |
+| Swift contributor standards | CODE_STYLE.md, root .swift-format, and pinned 604.0.0 CI workflow | Workflow updated; source lint remains failing pending reformat |
 
 ## Not yet verified
 - The latest observed Swift formatting run (42402478967) failed strict lint. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
