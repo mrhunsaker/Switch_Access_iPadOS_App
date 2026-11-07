@@ -40,6 +40,7 @@ The LLM prompt library includes **P00**, the required project-wide documentation
 
 See:
 - [Swift code style and contributor standards](CODE_STYLE.md)
+- Automated Swift formatting lint runs on pull requests and pushes to `main` using the checked-in `.swift-format` configuration; see [the workflow](.github/workflows/swift-format.yml).
 - [Development roadmap](docs/DEVELOPMENT_ROADMAP.md)
 - [Build and physical-device testing](docs/BUILD_AND_DEVICE_TESTING.md)
 - [Accessibility architecture](docs/ACCESSIBILITY_DESIGN.md)
