@@ -1,0 +1,50 @@
+site_name: SwitchPlay Documentation
+site_description: Project goals, development status, and accessibility guidance for SwitchPlay.
+site_url: https://mrhunsaker.github.io/Switch_Access_iPadOS_App/
+repo_url: https://github.com/mrhunsaker/Switch_Access_iPadOS_App
+repo_name: mrhunsaker/Switch_Access_iPadOS_App
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Overview: index.md
+  - Project:
+      - Goals: goals.md
+      - Current status: project-status.md
+      - Roadmap: roadmap.md
+      - Change history: https://github.com/mrhunsaker/Switch_Access_iPadOS_App/blob/main/CHANGES.md
+  - Accessibility:
+      - CVI-centered principles: accessibility-principles.md
+      - Switch Control design: ACCESSIBILITY_DESIGN.md
+  - Development:
+      - Environment setup: development-environment.md
+      - Build and device testing: BUILD_AND_DEVICE_TESTING.md
+      - Phase 1 acceptance: PHASE_1_ACCEPTANCE.md
+      - LLM-assisted workflow: llm-workflow.md
+  - Existing project notes:
+      - Development roadmap (source): DEVELOPMENT_ROADMAP.md
