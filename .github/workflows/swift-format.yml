@@ -3,15 +3,7 @@ name: Swift formatting
 on:
   push:
     branches: [main]
-    paths:
-      - "SwitchPlay/**/*.swift"
-      - ".swift-format"
-      - ".github/workflows/swift-format.yml"
   pull_request:
-    paths:
-      - "SwitchPlay/**/*.swift"
-      - ".swift-format"
-      - ".github/workflows/swift-format.yml"
   workflow_dispatch:
 
 permissions:
