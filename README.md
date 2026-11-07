@@ -32,11 +32,20 @@ Other activity destinations are placeholders for later phases.
 
 Xcode and the iPadOS SDK require macOS. Source files can be edited on Windows, but building, signing, and installing this native app require access to a Mac with Xcode.
 
+## Project documentation
+
+The project documentation is published with MkDocs Material through GitHub Actions: [Open the SwitchPlay documentation site](https://mrhunsaker.github.io/Switch_Access_iPadOS_App/). Documentation source is maintained in `docs/`.
+
 See:
 - [Development roadmap](docs/DEVELOPMENT_ROADMAP.md)
 - [Build and physical-device testing](docs/BUILD_AND_DEVICE_TESTING.md)
 - [Accessibility architecture](docs/ACCESSIBILITY_DESIGN.md)
 - [Phase 1 acceptance checklist](docs/PHASE_1_ACCEPTANCE.md)
+- [Project goals](docs/goals.md)
+- [Current project status](docs/project-status.md)
+- [Living development roadmap](docs/roadmap.md)
+- [CVI-centered accessibility principles](docs/accessibility-principles.md)
+- [LLM-assisted development workflow](docs/llm-workflow.md)
 
 ## Generate the Xcode project
 
