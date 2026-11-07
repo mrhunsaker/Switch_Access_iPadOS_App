@@ -72,6 +72,11 @@ Each activity must have acceptance criteria, accessible interaction paths, and t
 - [ ] **REL-05** — Verify public claims against evidence.
 - [ ] **REL-06** — Publish known limitations and release documentation.
 
+## Contributor engineering checks
+- [ ] **CI-01** — Verify the Swift formatting GitHub Actions workflow on a pull request or manual dispatch; resolve diagnostics and document the passing run.
+
+**Acceptance criteria:** `xcrun swift-format lint --strict --recursive SwitchPlay` completes successfully using the checked-in `.swift-format` configuration. This check is separate from Xcode compilation and all device/accessibility validation.
+
 ## Prioritization rule
 Do not expand activity count at the expense of a reliable accessibility foundation. A small number of well-tested, individually configurable activities is preferable to many unvalidated screens.
 
