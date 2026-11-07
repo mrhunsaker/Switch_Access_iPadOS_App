@@ -20,12 +20,13 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
-      - name: Verify Swift toolchain
-        run: |
-          xcrun --find swift-format
-          xcrun swift-format --version
+      - name: Install current stable swift-format
+        run: brew install swift-format
+
+      - name: Verify formatter version
+        run: swift-format --version
 
       - name: Lint using repository configuration
-        run: xcrun swift-format lint --strict --recursive SwitchPlay
+        run: swift-format lint --strict --recursive SwitchPlay
