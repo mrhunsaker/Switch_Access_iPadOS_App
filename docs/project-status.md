@@ -12,7 +12,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 
 | Stage | Stage status | Task IDs | Current state / next action |
 | --- | --- | --- | --- |
-| Contributor CI | BLOCKED | CI-01 | Workflow runs on main pushes and all pull requests. Initial strict lint runs failed because existing Swift files do not match the configured 2-space style and have additional formatting diagnostics; format source, then rerun. |
+| Contributor CI | BLOCKED | CI-01 | Workflow is implemented and now pins swift-format 604.0.0. Earlier strict lint runs failed on existing source formatting violations; run the updated workflow and resolve diagnostics. |
 | 0 — Establish a native build | BLOCKED | ST0-01–ST0-07 | ST0-01 requires user to obtain Mac access; subsequent setup/build tasks depend on it. |
 | 1 — Verify existing prototype | BLOCKED | ST1-01–ST1-07 | Requires Stage 0 build/install and physical iPad access. |
 | 2 — CVI accessibility foundation | NOT_STARTED | CVI-01–CVI-07 | Requires participatory requirements work; do not finalize universal visual defaults. |
@@ -20,12 +20,13 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | 4 — Music experiences | NOT_STARTED | MUS-01–MUS-05 | Piano source exists but remains unbuilt and untested; other music modules are planned. |
 | 5 — Personalization and reliability | NOT_STARTED | PER-01–PER-06 | Planned; no completion evidence recorded. |
 | 6 — Field evaluation and release readiness | NOT_STARTED | REL-01–REL-06 | Requires participatory evaluation, physical hardware testing, defect resolution, and evidence review. |
+| Documentation and toolchain consistency | IN_PROGRESS | DOC-01–DOC-02 | Repository audit and version alignment implemented; updated documentation workflow must pass. Evaluate Zensical before Material for MkDocs reaches end of life on 2027-05-05. |
 
 ### Task status details
 
 | Task ID | Status | Owner | Evidence / next action |
 | --- | --- | --- | --- |
-| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow is active. Runs 42402374179 and 42402425701 both reached Swift-format 6.3.0 and failed at strict lint due to existing source-format violations. Format `SwitchPlay`, rerun, and record a passing run. |
+| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow now installs and asserts swift-format 604.0.0. Historical runs 42402374179, 42402425701, and 42402478967 failed strict lint on existing source formatting. Format `SwitchPlay`, rerun, and record a passing run. |
 | ST0-01 | BLOCKED | User | Obtain Mac access; report macOS and Xcode versions. |
 | ST0-02–ST0-07 | BLOCKED | Joint | Depend on ST0-01; complete setup, project generation, signing, build, install, and launch in sequence. |
 | ST1-01–ST1-07 | BLOCKED | Joint | Await successful Stage 0 build and physical iPad validation. |
@@ -34,6 +35,8 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | MUS-01–MUS-05 | IMPLEMENTED_UNVERIFIED / NOT_STARTED | Joint | Existing piano code is committed but uncompiled; remaining music features are planned. |
 | PER-01–PER-06 | NOT_STARTED | Joint | Define individual settings, persistence, and lifecycle requirements. |
 | REL-01–REL-06 | NOT_STARTED | Joint | Schedule after core features and accessibility validation are ready. |
+| DOC-01 | IMPLEMENTED_UNVERIFIED | Joint | Repository-wide requirements and toolchain audit added at `docs/repository-audit.md`; verify the updated strict MkDocs build and Pages deployment. |
+| DOC-02 | NOT_STARTED | Joint | Evaluate migration from MkDocs Material to Zensical before 2027-05-05; check theme, navigation, search, strict build, and Pages deployment. |
 
 ### Current next action
 
@@ -54,7 +57,8 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Documentation site | MkDocs Material configuration and Pages workflow | Workflow committed; deployment pending |\n| Swift contributor standards | CODE_STYLE.md and root .swift-format configuration | Committed; automated lint workflow added; source lint result pending |
 
 ## Not yet verified
-- The Swift formatting workflow has not passed yet. GitHub Actions successfully found Swift-format 6.3.0, but strict lint failed on existing four-space indentation, line-length, import-order, and trailing-comma violations.
+- The latest observed Swift formatting run (42402478967) failed strict lint. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
+- The updated documentation workflow has not yet been verified after upgrading its GitHub Actions to current major releases and pinning MkDocs Material 9.8.0. Previous build/deploy run 42402479023 succeeded.
 - The source compiles with the current Xcode and iPadOS SDK.
 - The app installs and launches on a physical iPad.
 - Interactive controls work through system-wide Switch Control.
@@ -63,7 +67,7 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 - Audio behavior is reliable across routes and interruptions.
 
 ## Immediate next steps
-1. Format the existing Swift files with the checked-in `.swift-format` configuration, then rerun CI-01 until strict lint passes.
+1. Format the existing Swift files with the checked-in `.swift-format` configuration using swift-format 604.0.0, then rerun CI-01 until strict lint passes.
 2. Arrange access to a Mac with a supported Xcode installation.
 3. Clone the repository, install XcodeGen, and generate the Xcode project.
 4. Configure a unique bundle identifier and signing team.
@@ -73,7 +77,7 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 8. Record device, iPadOS, switch hardware, assignments, scan style, outcomes, and defects.
 9. Begin CVI-centered requirements and participatory design before finalizing visual defaults.
 
-See [Development environment setup](development-environment.md) and [Build and device testing](BUILD_AND_DEVICE_TESTING.md).
+See [Development environment setup](development-environment.md), [Build and device testing](BUILD_AND_DEVICE_TESTING.md), and the [repository consistency audit](repository-audit.md).
 
 ## Environment constraint
 The current workflow has access to a Windows computer and an iPad. Windows can edit source and manage Git, but Xcode, the iPadOS SDK, signing, and native deployment require macOS. A Mac is a prerequisite for the first build and physical-device test.
