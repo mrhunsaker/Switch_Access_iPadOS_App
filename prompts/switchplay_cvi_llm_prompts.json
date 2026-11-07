@@ -1,0 +1,289 @@
+{
+  "project": {
+    "name": "SwitchPlay",
+    "platform": "Native iPadOS",
+    "implementation": "Swift and SwiftUI",
+    "minimumOS": "iPadOS 17",
+    "primaryAccessibilityRequirement": "Use Apple's system-wide Switch Control. Do not implement an app-specific scanning engine, scanning cursor, or substitute switch-input system.",
+    "primaryPopulation": "Individuals with cortical or cerebral visual impairment (CVI), including people with additional motor, communication, cognitive, sensory, or developmental disabilities.",
+    "switchConfigurations": {
+      "oneSwitch": "Select Item with Auto Scanning",
+      "twoSwitch": "Next Item and Select Item with Manual Scanning",
+      "threeSwitch": "Move to Previous Item, Move to Next Item, and Select Item"
+    },
+    "platformLimitations": [
+      "The app cannot pair physical switches, assign system switch actions, or inspect the user's Switch Control configuration.",
+      "Users configure switches through iPadOS Settings.",
+      "Simulator testing cannot establish compatibility with physical switch hardware."
+    ]
+  },
+  "globalInstructions": [
+    "Treat CVI as highly individualized. Never assume all individuals with CVI share the same visual characteristics, preferences, or functional abilities.",
+    "Do not present one visual design or preset as universally accessible to people with CVI.",
+    "Consider visual complexity, visual clutter, figure-ground distinction, contrast, color preferences, visual latency, visual field preferences, crowding, motion sensitivity, light sensitivity, object recognition, visual attention, and visual fatigue.",
+    "Do not assume bright colors, high contrast, large graphics, animation, or minimal design are universally beneficial.",
+    "Make visual properties independently configurable where feasible. Avoid bundling unrelated changes into one setting.",
+    "Support predictable layouts, stable object locations, generous spacing, clear visual boundaries, and uncluttered presentation.",
+    "Avoid unnecessary animation, flashing, parallax, moving backgrounds, decorative transitions, and competing visual stimuli.",
+    "Offer adjustable response timing and enough time to visually locate, interpret, and select an item.",
+    "Never use color as the sole means of communicating meaning, status, selection, or correctness.",
+    "Use native SwiftUI accessibility elements, labels, hints, traits, groupings, and actions.",
+    "Do not make drag-and-drop the only interaction method. Prefer select-an-item followed by select-a-destination.",
+    "Keep app navigation controls distinct from iPadOS Switch Control commands.",
+    "Do not claim accessibility merely because code compiles or includes accessibility labels.",
+    "Do not claim Switch Control compatibility until tested on a physical iPad with representative switches and users.",
+    "Never invent clinical evidence, user-testing results, API availability, or platform capabilities. Identify uncertainty.",
+    "Preserve native iPadOS behavior and avoid interference with VoiceOver, Switch Control, and other assistive technologies.",
+    "Treat user customization and autonomy as core requirements; do not assume caregivers should make every decision."
+  ],
+  "prompts": [
+    {
+      "id": "P01",
+      "name": "CVI-centered product requirements review",
+      "stage": "Planning",
+      "purpose": "Evaluate the product plan against the functional needs and variability of individuals with CVI.",
+      "prompt": "Act as a multidisciplinary accessibility product reviewer with expertise in CVI, assistive technology, native iPadOS development, and augmentative and alternative communication. Review the supplied SwitchPlay requirements and identify missing requirements, accessibility risks, conflicting assumptions, and opportunities to improve participation and independence. Evaluate visual access, motor access, cognitive demands, communication access, sensory load, predictable interaction, and individual customization. Distinguish general accessibility recommendations from decisions requiring individualized assessment. Produce prioritized requirements, acceptance criteria, implementation dependencies, and test methods. Do not assume any particular color, contrast level, layout, or presentation method is appropriate for every person with CVI.",
+      "deliverables": [
+        "Prioritized accessibility requirements",
+        "CVI-specific risk register",
+        "Functional and nonfunctional requirements",
+        "Acceptance criteria",
+        "Questions for individuals with CVI, families, educators, and clinicians"
+      ]
+    },
+    {
+      "id": "P02",
+      "name": "Individualized CVI visual-accessibility architecture",
+      "stage": "Architecture",
+      "purpose": "Design a flexible visual presentation system without imposing a single CVI profile.",
+      "prompt": "Design a SwiftUI visual-accessibility architecture for SwitchPlay. Allow independent adjustment of background and foreground colors, contrast, object size, spacing, number of visible objects, visual boundaries, text size, visual complexity, animation, and transition behavior. Consider optional settings for color preferences, visual field placement, object familiarity, and presentation timing. Do not assume settings should be enabled by default. Make settings persistent and discoverable. Avoid a universal CVI Mode preset. Explain which settings SwiftUI can implement reliably and which require user research or technical validation. Provide Swift types, configuration models, view modifiers, and examples.",
+      "deliverables": [
+        "Accessibility configuration model",
+        "SwiftUI architecture",
+        "Default configuration rationale",
+        "Settings persistence approach",
+        "Implementation examples",
+        "Limitations and validation requirements"
+      ]
+    },
+    {
+      "id": "P03",
+      "name": "CVI visual design and interface audit",
+      "stage": "UI design",
+      "purpose": "Identify visual barriers and improve access to meaningful information.",
+      "prompt": "Review the supplied SwitchPlay screen, screenshot, or SwiftUI code from the perspective of an individual with CVI. Examine visual complexity, clutter, figure-ground relationships, crowding, spacing, object recognition, color use, contrast, visual boundaries, text legibility, visual hierarchy, location consistency, animation, and competing stimuli. Consider that visual field preferences, color preferences, and tolerance for complexity vary. Identify barriers and explain how each may affect access. Recommend a revised layout with individually adjustable parameters. Preserve familiar objects and predictable control locations. Do not remove useful information merely to create a minimalist appearance. Provide an issue-by-issue audit and revised SwiftUI implementation when source is supplied.",
+      "deliverables": [
+        "Screen-by-screen audit",
+        "Severity-ranked visual barriers",
+        "Recommended design changes",
+        "Customizable visual properties",
+        "Revised SwiftUI code or layout specification"
+      ]
+    },
+    {
+      "id": "P04",
+      "name": "Native Switch Control implementation review",
+      "stage": "Implementation",
+      "purpose": "Ensure interactions work with Apple's system-wide Switch Control.",
+      "prompt": "Review the supplied SwiftUI implementation for compatibility with Apple's system-wide iPadOS Switch Control. Do not create an app-specific scanning engine or custom scanning cursor. Verify meaningful native accessibility elements, labels, hints, traits, grouping, actions, logical scan order, unnecessary scan stops, nested elements, disabled controls, focus stability, dynamic content, navigation, and feedback after selection. Keep app navigation controls distinct from system switch commands. Assess one-switch Auto Scanning, two-switch Manual Scanning, and three-switch Manual Scanning configurations. Explain what source inspection can establish and what requires physical-device testing. Provide corrected SwiftUI code and a test matrix.",
+      "deliverables": [
+        "Switch Control compatibility review",
+        "Accessibility element hierarchy",
+        "Recommended scan order",
+        "SwiftUI corrections",
+        "One-, two-, and three-switch test scenarios",
+        "Unverified assumptions"
+      ]
+    },
+    {
+      "id": "P05",
+      "name": "Accessible activity and interaction design",
+      "stage": "Feature design",
+      "purpose": "Design learning and recreational activities for varied visual, motor, cognitive, and communication abilities.",
+      "prompt": "Design the supplied SwitchPlay activity for individuals with CVI and varied motor and communication abilities. The activity must use native system-wide Switch Control. Evaluate visual complexity, target size, target spacing, visual recognition, response timing, cognitive load, predictable placement, error recovery, feedback, and scan steps. Provide a simple interaction pathway and optional levels of complexity. Prefer selecting an item and then selecting a destination over requiring dragging. Consider matching, memory, cause-and-effect, puzzles, sequencing, creative activities, and music. Provide meaningful choices without presenting too many competing visual targets simultaneously. Do not equate faster responses with better performance. Include ways to participate without relying exclusively on vision.",
+      "deliverables": [
+        "Activity specification",
+        "Interaction flow",
+        "Difficulty and complexity options",
+        "Accessibility settings",
+        "Error recovery behavior",
+        "Switch Control navigation plan",
+        "Acceptance criteria"
+      ]
+    },
+    {
+      "id": "P06",
+      "name": "Accessible feedback and response timing",
+      "stage": "Implementation",
+      "purpose": "Make feedback understandable without sensory overload or unnecessary time pressure.",
+      "prompt": "Design the feedback system for the supplied SwitchPlay interaction. Consider visual, auditory, and optional tactile feedback where supported. Provide configurable feedback preferences and independent volume controls. Avoid rapid flashing, unnecessary motion, startling sounds, and competing stimuli. Account for individuals who need additional time to visually process an object or locate a target. Do not assume immediate feedback or automatic advancement is always helpful. Design configurable response delays, repeatable instructions, optional confirmation steps, and predictable success or error feedback. Ensure feedback is exposed appropriately to VoiceOver and native accessibility technologies. Provide SwiftUI examples and a test plan.",
+      "deliverables": [
+        "Feedback design specification",
+        "Timing configuration",
+        "Audio and visual feedback rules",
+        "Accessibility announcements",
+        "SwiftUI examples",
+        "User testing criteria"
+      ]
+    },
+    {
+      "id": "P07",
+      "name": "Accessible music and sound activities",
+      "stage": "Feature implementation",
+      "purpose": "Support music participation without requiring precise visual targeting.",
+      "prompt": "Design a SwitchPlay music activity for individuals with CVI and motor disabilities. Evaluate piano, drums, soundboard, composer, and music-player features. Use native SwiftUI controls and system-wide Switch Control. Support adjustable target sizes, spacing, instrument layouts, sound selection, volume, and visual complexity. Provide stable instrument locations and optional visual representations that can be customized independently. Consider activities that can be completed primarily through auditory feedback, with visual information available but not mandatory. Do not rely on color alone to distinguish notes or instruments. Evaluate AVAudioEngine for generated sounds and AVPlayer or AVAudioPlayer for prerecorded media. Keep playback controls accessible, predictable, and easy to stop. Identify audio overload risks and provide independent volume and sound controls. Do not reproduce copyrighted recordings without appropriate rights.",
+      "deliverables": [
+        "Music activity architecture",
+        "Accessible instrument layouts",
+        "Switch Control interaction design",
+        "Audio feedback and volume model",
+        "Swift implementation examples",
+        "Testing requirements"
+      ]
+    },
+    {
+      "id": "P08",
+      "name": "SwiftUI accessibility code review and correction",
+      "stage": "Implementation",
+      "purpose": "Improve source code while preserving the accessibility architecture.",
+      "prompt": "Act as a senior SwiftUI accessibility engineer. Review the supplied SwitchPlay source code. Identify issues involving accessibility labels, hints, traits, element grouping, accessibility actions, focus behavior, scan order, target size, dynamic content, state changes, navigation, and visual customization. Evaluate one-, two-, and three-switch system configurations. Consider CVI-specific needs including visual complexity, figure-ground separation, spacing, object familiarity, color customization, visual latency, motion sensitivity, and visual fatigue. Provide corrected complete Swift source files rather than isolated fragments when practical. Do not introduce private APIs, unsupported modifiers, app-specific scanning, or unverified platform behavior. Explain each change and identify anything requiring compilation or physical-device validation.",
+      "deliverables": [
+        "Code review findings",
+        "Prioritized fixes",
+        "Complete revised source files",
+        "Explanation of changes",
+        "Build and device validation checklist"
+      ]
+    },
+    {
+      "id": "P09",
+      "name": "Accessibility test plan and acceptance testing",
+      "stage": "Quality assurance",
+      "purpose": "Evaluate functional access rather than merely the presence of accessibility code.",
+      "prompt": "Create a comprehensive accessibility test plan for SwitchPlay. Include native iPadOS Switch Control tests with one, two, and three switches; VoiceOver compatibility; visual customization; supported alternative input; audio feedback; and error recovery. Include participants with different CVI characteristics without assuming a universal profile. Evaluate visual search demands, target recognition, scanning effort, time to locate and activate controls, fatigue, accidental activation, predictability, and independence. Include actual iPad hardware and physical switches. Define what can be tested in Simulator, what requires a physical iPad, and what requires participation from individuals with CVI. A successful build is not evidence of accessibility. Create measurable acceptance criteria and defect classifications.",
+      "deliverables": [
+        "Test plan",
+        "Test cases",
+        "Acceptance criteria",
+        "Device and switch hardware requirements",
+        "CVI user testing protocol",
+        "Defect severity definitions",
+        "Release readiness checklist"
+      ]
+    },
+    {
+      "id": "P10",
+      "name": "Participatory design and user research",
+      "stage": "Research",
+      "purpose": "Ensure design decisions are informed by people who use the application.",
+      "prompt": "Develop a participatory design and usability research plan for SwitchPlay involving individuals with CVI, family members, educators, occupational therapists, speech-language pathologists, and assistive technology specialists as appropriate. The individual with CVI is a primary stakeholder, not merely an observer. Create accessible consent and assent processes, session structures, observation templates, and interview questions. Investigate visual preferences, visual recognition, environmental lighting, visual fatigue, preferred feedback, scanning tolerance, motor access, communication methods, and individual goals. Avoid leading questions and assumptions based on diagnostic labels. Do not require participants to demonstrate skills unnecessary to their goals. Capture qualitative feedback and task outcomes without treating speed as the only measure of success.",
+      "deliverables": [
+        "Research plan",
+        "Accessible participant materials",
+        "Interview and observation guides",
+        "Task scenarios",
+        "Outcome measures",
+        "Ethical and privacy considerations"
+      ]
+    },
+    {
+      "id": "P11",
+      "name": "Individual, caregiver, and educator customization",
+      "stage": "Feature design",
+      "purpose": "Make personalization practical while preserving individual autonomy.",
+      "prompt": "Design a SwitchPlay customization experience that allows an individual, with assistance if desired, to configure visual presentation, activity complexity, feedback, audio, and interaction timing. Support independent adjustments for colors, backgrounds, contrast, object size, spacing, number of visible items, text, animation, and sound. Explain settings in plain language and provide a preview. Do not assume caregivers or professionals should control all settings. Preserve the individual's ability to make choices and express preferences. Avoid diagnostic labels as the basis for automatic visual presets. Include safe defaults, easy reset options, persistent settings, and a SwiftUI settings architecture.",
+      "deliverables": [
+        "Settings information architecture",
+        "Customization interaction design",
+        "Configuration data model",
+        "Preview and reset behavior",
+        "Autonomy and privacy considerations",
+        "SwiftUI implementation plan"
+      ]
+    },
+    {
+      "id": "P12",
+      "name": "Accessibility documentation and onboarding",
+      "stage": "Documentation",
+      "purpose": "Explain app use and system setup clearly.",
+      "prompt": "Write accessible SwitchPlay onboarding and documentation for individuals with CVI, families, educators, and assistive technology professionals. Explain that SwitchPlay uses Apple's system-wide Switch Control and does not pair or assign physical switches. Provide iPadOS setup instructions for one-switch Auto Scanning, two-switch Manual Scanning, and three-switch Manual Scanning. Explain the app's Back button separately from the system Move to Previous Item command. Explain visual and auditory customization without promising any setting is appropriate for every person with CVI. Use concise language, consistent terminology, clear steps, and accessible formatting. Identify iPadOS-version-dependent instructions requiring verification.",
+      "deliverables": [
+        "First-launch onboarding",
+        "Switch Control setup guide",
+        "Activity instructions",
+        "Customization guide",
+        "Troubleshooting guide",
+        "Known limitations"
+      ]
+    },
+    {
+      "id": "P13",
+      "name": "Accessibility regression review",
+      "stage": "Maintenance",
+      "purpose": "Prevent new features from degrading existing accessibility.",
+      "prompt": "Review the proposed SwitchPlay release changes for accessibility regressions. Compare changes with established accessibility requirements and test results. Identify changes that may increase visual complexity, reduce target size, alter scan order, add scanning stops, introduce motion, change feedback timing, or remove customization. Check native accessibility semantics and existing one-, two-, and three-switch workflows. Produce a regression checklist and required tests before merging. Do not approve changes solely because they compile or pass conventional UI tests.",
+      "deliverables": [
+        "Accessibility regression report",
+        "Affected requirements",
+        "Required retesting",
+        "Release blockers",
+        "Merge recommendation"
+      ]
+    },
+    {
+      "id": "P14",
+      "name": "Evidence and clinical-claim verification",
+      "stage": "Research and review",
+      "purpose": "Prevent unsupported claims about CVI and accessibility.",
+      "prompt": "Review supplied SwitchPlay design recommendations, documentation, or marketing claims for scientific accuracy and responsible language concerning cortical or cerebral visual impairment. Identify statements that are unsupported, overgeneralized, outdated, or presented as universal despite individual variation. Prefer reputable clinical, academic, government, and recognized professional sources. Distinguish clinical evidence, professional guidance, anecdotal observations, and product design hypotheses. Provide citations and publication dates for external claims. Do not diagnose users, prescribe individualized interventions, or imply that SwitchPlay provides therapy or produces clinical outcomes without appropriate evidence. Recommend cautious replacement language.",
+      "deliverables": [
+        "Claim-by-claim evidence review",
+        "Source list with dates",
+        "Unsupported claim warnings",
+        "Recommended wording",
+        "Research gaps"
+      ]
+    }
+  ],
+  "implementationWorkflow": {
+    "recommendedOrder": [
+      "P01",
+      "P02",
+      "P10",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P11",
+      "P07",
+      "P08",
+      "P09",
+      "P12",
+      "P13",
+      "P14"
+    ],
+    "workingRules": [
+      "Work on one milestone at a time.",
+      "Inspect existing repository files before proposing replacements.",
+      "Preserve project structure and naming conventions unless a change is justified.",
+      "Identify exact files to create or modify.",
+      "Provide complete source files where practical.",
+      "Never claim code was compiled, run, or tested unless that occurred.",
+      "Separate source-level review from physical-device testing.",
+      "Verify API availability and behavior against current Apple developer documentation.",
+      "Record unresolved questions rather than inventing answers.",
+      "Do not commit changes unless explicitly authorized."
+    ],
+    "releaseGate": [
+      "Core activities use native accessibility elements.",
+      "System-wide Switch Control has been tested on physical iPad hardware.",
+      "One-switch, two-switch, and three-switch workflows have been evaluated.",
+      "Visual customization has been evaluated with individuals with different CVI characteristics.",
+      "No activity requires drag-and-drop as its only interaction method.",
+      "Feedback and timing can be adjusted where appropriate.",
+      "VoiceOver and other relevant accessibility behavior have been evaluated.",
+      "Accessibility regressions have been reviewed.",
+      "Claims about CVI support are supported by evidence and actual user testing."
+    ]
+  }
+}
