@@ -18,6 +18,14 @@ This file records notable project changes. Planned work must not be described as
 ## Updating this file
 Add a dated or versioned section near the top for each meaningful change. Summarize features, accessibility changes, fixes, documentation changes, and known limitations. Keep implementation status accurate.
 
+## 2026-11-07 — Swift contributor standards
+
+- Added CODE_STYLE.md with Swift and SwiftUI naming, architecture, error handling, concurrency, audio, accessibility, documentation, and testing conventions.
+- Added the repository-wide .swift-format configuration (2-space indentation, 100-character line target, import organization, and consistent declaration formatting).
+- Linked the standard from the README, contributor guide, and MkDocs navigation.
+- Updated the LLM prompt library so P00 and code-review prompt P08 enforce the same style standard.
+- No Swift source was reformatted, compiled, or linted as part of this documentation/configuration change.
+
 ## 2026-11-07
 
 - Added P00, a mandatory project-wide LLM prompt for repository reconciliation, stable task IDs, stage tracking, documentation synchronization, and evidence-based completion.
