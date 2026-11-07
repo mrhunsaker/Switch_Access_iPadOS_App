@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "lineLength": 100,
+  "indentation": {
+    "spaces": 2
+  },
+  "tabWidth": 2,
+  "maximumBlankLines": 1,
+  "spacesBeforeEndOfLineComments": 2,
+  "respectsExistingLineBreaks": true,
+  "lineBreakBeforeControlFlowKeywords": false,
+  "lineBreakBeforeEachArgument": true,
+  "lineBreakBeforeEachGenericRequirement": true,
+  "lineBreakBetweenDeclarationAttributes": false,
+  "indentConditionalCompilationBlocks": true,
+  "indentSwitchCaseLabels": false,
+  "multiElementCollectionTrailingCommas": true,
+  "reflowMultilineStringLiterals": "never",
+  "indentBlankLines": false,
+  "fileScopedDeclarationPrivacy": {
+    "accessLevel": "private"
+  },
+  "orderedImports": {
+    "includeConditionalImports": false,
+    "shouldGroupImports": true
+  }
+}
