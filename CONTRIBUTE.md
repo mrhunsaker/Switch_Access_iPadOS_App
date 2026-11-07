@@ -55,6 +55,6 @@ mkdocs build --strict
 ```
 
 ## Code style
-Follow existing Swift naming and formatting conventions. Prefer clear, small SwiftUI views and reusable accessibility patterns. Avoid speculative abstractions and unsupported APIs. Explain non-obvious accessibility decisions in comments.
+All Swift contributions must follow the repository [CODE_STYLE.md](CODE_STYLE.md) and the checked-in [.swift-format](.swift-format) configuration. Run `swift-format lint --strict --recursive SwitchPlay` before submitting and report the result. The guide covers Swift naming/API design, file organization, SwiftUI state and view composition, error handling, concurrency, audio lifecycle, accessibility semantics, documentation, and testing. Do not introduce a competing formatter or change formatter settings without review. Formatting and linting do not replace compilation, tests, physical-device checks, or participatory accessibility evaluation.
 
 For suspected vulnerabilities, follow [SECURITY.md](SECURITY.md) and do not post details publicly.
