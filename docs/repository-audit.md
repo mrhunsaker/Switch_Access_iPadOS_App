@@ -43,7 +43,7 @@ Versions below were checked against upstream release information on **2026-11-07
 | GitHub Pages artifact upload | v5.0.0 | Workflow references major tag `@v5`. |
 | GitHub Pages deployment | v5.0.1 | Workflow references major tag `@v5`. |
 | MkDocs Material | 9.8.0 | Exact version pinned in `requirements-docs.txt`. |
-| Python for docs CI | 3.12 | Meets Material's Python 3.11+ requirement. |
+| Python for docs CI | 3.15.2 | Latest stable Python release on the audit date; meets Material's Python 3.11+ requirement. |
 | iPadOS deployment target | 17.0 | Product compatibility baseline; not raised as part of a tooling refresh. |
 | Swift language mode | 5.0 | Xcode build setting selecting Swift 5 language mode; it is not a compiler-version pin. |
 
@@ -56,6 +56,7 @@ Versions below were checked against upstream release information on **2026-11-07
 - [actions/upload-pages-artifact releases](https://github.com/actions/upload-pages-artifact/releases)
 - [actions/deploy-pages releases](https://github.com/actions/deploy-pages/releases)
 - [MkDocs Material on PyPI](https://pypi.org/project/mkdocs-material/) and [upstream changelog](https://squidfunk.github.io/mkdocs-material/changelog/)
+- [Python release versions](https://www.python.org/doc/versions/) and [Python version support status](https://devguide.python.org/versions/)
 - [Apple Xcode release notes](https://developer.apple.com/documentation/xcode-release-notes) and [Xcode system requirements](https://developer.apple.com/xcode/system-requirements/)
 
 ## Deliberate compatibility decisions
