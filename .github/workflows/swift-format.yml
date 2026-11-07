@@ -1,0 +1,39 @@
+name: Swift formatting
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "SwitchPlay/**/*.swift"
+      - ".swift-format"
+      - ".github/workflows/swift-format.yml"
+  pull_request:
+    paths:
+      - "SwitchPlay/**/*.swift"
+      - ".swift-format"
+      - ".github/workflows/swift-format.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: swift-format-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint Swift source
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify Swift toolchain
+        run: |
+          xcrun --find swift-format
+          xcrun swift-format --version
+
+      - name: Lint using repository configuration
+        run: xcrun swift-format lint --strict --recursive SwitchPlay
