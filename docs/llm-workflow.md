@@ -50,7 +50,7 @@ The user is the completion authority for user-owned manual checks. Do not infer 
 
 ## Required tracking records
 
-Every roadmap task must have a stable ID and an identifiable acceptance criterion. Maintain task status, owner, dependencies, verification method, evidence, last-updated date, and next action in the roadmap or project-status record. The project-status page is a concise summary and may group task IDs when their status and owner match; do not let a grouped row conceal different acceptance criteria or verification results. Every stage must have a status, task IDs, exit criteria, exit evidence, blockers, and next action.
+Every roadmap task must have a stable ID, description, status, and owner. Before a task enters `IN_PROGRESS`, define its dependencies, acceptance criteria, and verification method. When work starts, record evidence, last-updated date, and next action, and keep them current through completion or deferral. For `NOT_STARTED` tasks, stage-level dependencies and exit criteria may be used until the task is prioritized, but acceptance criteria must be explicit before implementation begins. The project-status page is a concise summary and may group task IDs when their status and owner match; do not let a grouped row conceal different acceptance criteria or verification results. Every stage must have a status, task IDs, exit criteria, exit evidence, blockers, and next action.
 
 Maintain:
 - **`docs/roadmap.md`:** planned work, stable task IDs, dependencies, acceptance criteria, and unchecked completion boxes.
