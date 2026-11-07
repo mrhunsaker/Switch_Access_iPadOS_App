@@ -1,5 +1,7 @@
 # Current project status
 
+> **Completion authority:** The LLM may report implementation progress, but only the user can confirm user-owned manual checks. No manual/device/participant task is complete until the user reports the result and evidence is recorded. See the [LLM tracking workflow](llm-workflow.md).
+
 **Status: early prototype; first native build and physical-device validation are pending.**
 
 This is the living snapshot of what exists, what is verified, and what should happen next. Update it whenever work is completed or priorities change.
@@ -38,6 +40,28 @@ See [Development environment setup](development-environment.md) and [Build and d
 
 ## Environment constraint
 The current workflow has access to a Windows computer and an iPad. Windows can edit source and manage Git, but Xcode, the iPadOS SDK, signing, and native deployment require macOS. A Mac is a prerequisite for the first build and physical-device test.
+
+## USER ACTION REQUIRED
+
+**ST0-01 — Obtain access to a Mac with supported Xcode**
+
+- **Owner:** User
+- **Status:** BLOCKED until Mac access is available.
+- **Action:** Arrange access to a Mac capable of running a current supported Xcode release.
+- **Report back:** Confirm whether a Mac is available and, if so, its macOS and Xcode versions.
+- **Completion rule:** Do not check off the corresponding roadmap item until the user confirms access and the environment details are recorded.
+
+**ST0-06 — Build, install, and launch on a physical iPad**
+
+- **Owner:** User, with LLM assistance for troubleshooting.
+- **Status:** BLOCKED by ST0-01 and the remaining Stage 0 setup tasks.
+- **Action after prerequisites:** Generate the Xcode project, configure signing, then build, install, and launch on the iPad.
+- **Report back:** Pass/fail, tested commit, Xcode version, iPad model, iPadOS version, and any complete build or launch error.
+- **Completion rule:** Keep the roadmap checkbox unchecked until the user reports the result and evidence is recorded.
+
+## Task status conventions
+
+Use the status vocabulary in the [LLM workflow](llm-workflow.md). Source committed, build passed, Simulator tested, physical iPad tested, physical switches tested, and participatory CVI evaluation are separate evidence levels. Do not collapse them into a single "done" state.
 
 ## Update policy
 When a task is completed, update this page and the roadmap in the same change. Mark work complete only when its stated evidence exists. Keep pending, blocked, and unverified work distinct.
