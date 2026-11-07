@@ -12,7 +12,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 
 | Stage | Stage status | Task IDs | Current state / next action |
 | --- | --- | --- | --- |
-| Contributor CI | IMPLEMENTED_UNVERIFIED | CI-01 | Swift-format workflow committed; first GitHub Actions run must be inspected before marking verified. |
+| Contributor CI | BLOCKED | CI-01 | Workflow runs on main pushes and all pull requests. Initial strict lint runs failed because existing Swift files do not match the configured 2-space style and have additional formatting diagnostics; format source, then rerun. |
 | 0 — Establish a native build | BLOCKED | ST0-01–ST0-07 | ST0-01 requires user to obtain Mac access; subsequent setup/build tasks depend on it. |
 | 1 — Verify existing prototype | BLOCKED | ST1-01–ST1-07 | Requires Stage 0 build/install and physical iPad access. |
 | 2 — CVI accessibility foundation | NOT_STARTED | CVI-01–CVI-07 | Requires participatory requirements work; do not finalize universal visual defaults. |
@@ -25,7 +25,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 
 | Task ID | Status | Owner | Evidence / next action |
 | --- | --- | --- | --- |
-| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | `.github/workflows/swift-format.yml` committed; inspect first workflow run and record pass/fail. |
+| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow is active. Runs 42402374179 and 42402425701 both reached Swift-format 6.3.0 and failed at strict lint due to existing source-format violations. Format `SwitchPlay`, rerun, and record a passing run. |
 | ST0-01 | BLOCKED | User | Obtain Mac access; report macOS and Xcode versions. |
 | ST0-02–ST0-07 | BLOCKED | Joint | Depend on ST0-01; complete setup, project generation, signing, build, install, and launch in sequence. |
 | ST1-01–ST1-07 | BLOCKED | Joint | Await successful Stage 0 build and physical iPad validation. |
@@ -54,7 +54,7 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Documentation site | MkDocs Material configuration and Pages workflow | Workflow committed; deployment pending |\n| Swift contributor standards | CODE_STYLE.md and root .swift-format configuration | Committed; automated lint workflow added; source lint result pending |
 
 ## Not yet verified
-- The new Swift formatting GitHub Actions workflow has completed a successful run on the current repository revision.
+- The Swift formatting workflow has not passed yet. GitHub Actions successfully found Swift-format 6.3.0, but strict lint failed on existing four-space indentation, line-length, import-order, and trailing-comma violations.
 - The source compiles with the current Xcode and iPadOS SDK.
 - The app installs and launches on a physical iPad.
 - Interactive controls work through system-wide Switch Control.
@@ -63,7 +63,7 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 - Audio behavior is reliable across routes and interruptions.
 
 ## Immediate next steps
-1. Inspect the first `Swift formatting` workflow run; resolve any configuration or lint diagnostics and record the result for CI-01.
+1. Format the existing Swift files with the checked-in `.swift-format` configuration, then rerun CI-01 until strict lint passes.
 2. Arrange access to a Mac with a supported Xcode installation.
 3. Clone the repository, install XcodeGen, and generate the Xcode project.
 4. Configure a unique bundle identifier and signing team.
