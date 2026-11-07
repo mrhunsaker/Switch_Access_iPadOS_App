@@ -26,7 +26,7 @@ The repository's product requirements are internally consistent after the reconc
 | Two roadmaps could be mistaken as equally authoritative. | `docs/roadmap.md` is the living task/status plan; `docs/DEVELOPMENT_ROADMAP.md` is the original technical phase guide. |
 | Three-switch prompt mapping omitted the scanning style. | Prompt now explicitly says Manual Scanning, matching README and accessibility guides. |
 | Project status described Pages deployment as pending despite a successful prior run. | Record run 42402479023 as a successful build/deploy before the current workflow-action upgrade; verify the new run separately. |
-| Swift lint workflow used the Xcode-bundled formatter (6.3.0), while the formatter guide did not pin a CI-compatible version. | CI now installs and checks swift-format 604.0.0 before strict lint; the source lint is still failing and remains open. |
+| Swift lint workflow used the Xcode-bundled formatter (6.3.0), while the formatter guide did not pin a CI-compatible version. | CI installs and checks swift-format 604.0.0; all five Swift files were reformatted and strict lint passed in run [42404181569](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/actions/runs/42404181569). |
 | Documentation install guidance said Python 3.10+, but current Material requires Python 3.11+. | Updated contributor and environment guidance to Python 3.11+; CI uses Python 3.12. |
 | Toolchain upgrades could be confused with changes to language compatibility or minimum OS. | Keep iPadOS 17 deployment target and Swift 5 language mode unchanged pending a separate compatibility decision and build evidence. |
 
@@ -74,7 +74,7 @@ MkDocs Material 9.8.0 is the current pinned release. Upstream has announced end 
 
 ## Outstanding verification and user-owned work
 
-1. **CI-01 remains IMPLEMENTED_UNVERIFIED:** strict lint previously failed on source formatting violations. The new pinned formatter workflow must pass before this task is complete.
+1. **CI-01 is VERIFIED_COMPLETE:** all five Swift source files conform to the checked-in formatting configuration; pinned swift-format 604.0.0 strict lint passed in run [42404181569](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/actions/runs/42404181569).
 2. **DOC-01 is VERIFIED_COMPLETE:** updated strict MkDocs build, artifact upload, and GitHub Pages deployment passed in run 42403662715 with Python 3.15.2, MkDocs Material 9.8.0, and the upgraded Actions.
 3. The Swift source has not been compiled with Xcode. A Mac is still required.
 4. No physical iPad, physical-switch, VoiceOver, or CVI participatory validation is claimed.
