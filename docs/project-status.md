@@ -26,7 +26,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 
 | Task ID | Status | Owner | Evidence / next action |
 | --- | --- | --- | --- |
-| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow now installs and asserts swift-format 604.0.0. Runs 42402374179, 42402425701, 42402478967, 42403314021, 42403378523, and latest run 42403519607 failed strict lint on existing source formatting. Run 42403419130 installed and verified swift-format 604.0.0 before reporting indentation, line-length, and trailing-comma violations. Format `SwitchPlay`, rerun, and record a passing run. |
+| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow now installs and asserts swift-format 604.0.0. Runs 42402374179, 42402425701, 42402478967, 42403314021, 42403378523, and latest run 42403559391 failed strict lint on existing source formatting. Run 42403419130 installed and verified swift-format 604.0.0 before reporting indentation, line-length, and trailing-comma violations. Format `SwitchPlay`, rerun, and record a passing run. |
 | ST0-01 | BLOCKED | User | Obtain Mac access; report macOS and Xcode versions. |
 | ST0-02–ST0-07 | BLOCKED | Joint | Depend on ST0-01; complete setup, project generation, signing, build, install, and launch in sequence. |
 | ST1-01–ST1-07 | BLOCKED | Joint | Await successful Stage 0 build and physical iPad validation. |
@@ -36,7 +36,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | MUS-02–MUS-05 | NOT_STARTED | Joint | Drums/soundboard, composer, prerecorded player, and audio reliability work remain planned. |
 | PER-01–PER-06 | NOT_STARTED | Joint | Define individual settings, persistence, and lifecycle requirements. |
 | REL-01–REL-06 | NOT_STARTED | Joint | Schedule after core features and accessibility validation are ready. |
-| DOC-01 | IMPLEMENTED_UNVERIFIED | Joint | Repository-wide requirements and toolchain audit added at `docs/repository-audit.md`; verify the updated strict MkDocs build and Pages deployment. |
+| DOC-01 | VERIFIED_COMPLETE | Joint | Repository-wide requirements and toolchain audit completed; strict MkDocs build and GitHub Pages deployment passed in run 42403559310 using Python 3.15.2 and the updated Actions. |
 | DOC-02 | NOT_STARTED | Joint | Evaluate migration from MkDocs Material to Zensical before 2027-05-05; check theme, navigation, search, strict build, and Pages deployment. |
 
 ### Current next action
@@ -55,12 +55,12 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Project setup | XcodeGen specification targeting iOS 17+ | Not generated or built with Xcode |
 | Accessibility planning | Switch Control design contract and testing guides | Documentation exists; behavior unverified |
 | CVI prompt library | 15 LLM prompts, including mandatory P00 tracking prompt and Swift style checks | JSON committed |
-| Documentation site | MkDocs Material 9.8.0, pinned requirements, and GitHub Pages workflow | Prior build/deploy run 42402479023 succeeded; verify again after action upgrades |
+| Documentation site | MkDocs Material 9.8.0, pinned requirements, and GitHub Pages workflow | Strict build, artifact upload, and Pages deployment passed in run 42403559310 using Python 3.15.2 and current Actions |
 | Swift contributor standards | CODE_STYLE.md, root .swift-format, and pinned 604.0.0 CI workflow | Workflow updated; source lint remains failing pending reformat |
 
 ## Not yet verified
-- The latest observed Swift formatting run (42403519607) installed and verified swift-format 604.0.0 successfully, then failed strict lint on existing source-format violations. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
-- The updated documentation workflow has not yet been verified after upgrading its GitHub Actions to current major releases and pinning MkDocs Material 9.8.0. Previous build/deploy run 42402479023 succeeded.
+- The latest observed Swift formatting run (42403559391) installed and verified swift-format 604.0.0 successfully, then failed strict lint on existing source-format violations. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
+- The updated documentation workflow passed strict build, Pages artifact upload, and deployment in run 42403559310 with Python 3.15.2, MkDocs Material 9.8.0, and the upgraded Actions.
 - Whether the source compiles with the current Xcode and iPadOS SDK remains unverified.
 - Whether the app installs and launches on a physical iPad remains unverified.
 - Whether interactive controls work through system-wide Switch Control remains unverified.
