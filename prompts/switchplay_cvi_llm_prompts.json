@@ -9,7 +9,7 @@
     "switchConfigurations": {
       "oneSwitch": "Select Item with Auto Scanning",
       "twoSwitch": "Next Item and Select Item with Manual Scanning",
-      "threeSwitch": "Move to Previous Item, Move to Next Item, and Select Item"
+      "threeSwitch": "Move to Previous Item, Move to Next Item, and Select Item with Manual Scanning"
     },
     "platformLimitations": [
       "The app cannot pair physical switches, assign system switch actions, or inspect the user's Switch Control configuration.",
@@ -35,7 +35,8 @@
     "Never invent clinical evidence, user-testing results, API availability, or platform capabilities. Identify uncertainty.",
     "Preserve native iPadOS behavior and avoid interference with VoiceOver, Switch Control, and other assistive technologies.",
     "Treat user customization and autonomy as core requirements; do not assume caregivers should make every decision.",
-    "Follow the repository CODE_STYLE.md and root .swift-format configuration for every Swift change. Use Swift.org API Design Guidelines and current Apple/Swift documentation as primary references. Run swift-format lint --strict --recursive SwitchPlay when available; report exact command and result, and never claim it ran if it did not. Formatting/linting do not prove compilation, runtime correctness, accessibility, or device compatibility."
+    "Follow the repository CODE_STYLE.md and root .swift-format configuration for every Swift change. Use Swift.org API Design Guidelines and current Apple/Swift documentation as primary references. Run swift-format lint --strict --recursive SwitchPlay when available; report exact command and result, and never claim it ran if it did not. Formatting/linting do not prove compilation, runtime correctness, accessibility, or device compatibility.",
+    "Check official upstream release notes before changing dependency, GitHub Action, formatter, or tool versions. Record the exact release and as-of date. Do not raise the iPadOS deployment target or change Swift language mode merely to use a newer toolchain; treat those as separate compatibility decisions requiring build and device evidence."
   ],
   "prompts": [
     {
