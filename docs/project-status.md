@@ -33,7 +33,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | CVI-01–CVI-07 | NOT_STARTED | Joint | Plan requirements review and participatory design; document decisions and evidence. |
 | ACT-01–ACT-06 | NOT_STARTED | Joint | Define activity-specific acceptance criteria before implementation. |
 | MUS-01 | IMPLEMENTED_UNVERIFIED | Joint | Piano prototype source exists but is not compiled or tested; define improvements after the initial build and accessibility foundation. |
-| MUS-02–MUS-05 | NOT_STARTED | Joint | Drums/soundboard, composer, prerecorded player, and audio reliability work remain planned.
+| MUS-02–MUS-05 | NOT_STARTED | Joint | Drums/soundboard, composer, prerecorded player, and audio reliability work remain planned. |
 | PER-01–PER-06 | NOT_STARTED | Joint | Define individual settings, persistence, and lifecycle requirements. |
 | REL-01–REL-06 | NOT_STARTED | Joint | Schedule after core features and accessibility validation are ready. |
 | DOC-01 | IMPLEMENTED_UNVERIFIED | Joint | Repository-wide requirements and toolchain audit added at `docs/repository-audit.md`; verify the updated strict MkDocs build and Pages deployment. |
