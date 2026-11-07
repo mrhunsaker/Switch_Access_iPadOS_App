@@ -5,25 +5,21 @@ This file records notable project changes. Planned work must not be described as
 ## Unreleased
 
 ### Added
-- GitHub Actions Swift formatting workflow that runs strict `swift-format` lint on relevant pull requests, pushes to `main`, and manual dispatches.
+- Repository-wide consistency and toolchain audit at `docs/repository-audit.md`.
+- GitHub Actions Swift formatting workflow with strict linting and an explicit swift-format 604.0.0 version check.
+- Documentation maintenance tasks for the audit and a pre-2027-05-05 evaluation of Zensical as the successor to MkDocs Material.
 
-### Status
-- The workflow runs on every pull request and push to `main`, plus manual dispatch. Initial runs 42402374179 and 42402425701 successfully found Swift-format 6.3.0 but failed strict lint because existing source files have formatting violations (notably four-space indentation versus the configured two spaces, plus line-length, import-order, and trailing-comma diagnostics).
-- CI-01 remains open until the Swift source is formatted and a subsequent workflow run passes. The workflow checks formatting only; it does not build or test the iPadOS app.
+### Changed
+- Updated GitHub Actions dependencies to current stable major releases: checkout v7, setup-python v7, upload-pages-artifact v5, and deploy-pages v5.
+- Pinned MkDocs Material to 9.8.0 and aligned documentation setup instructions with its Python 3.11+ requirement; documentation CI uses Python 3.12.
+- Clarified that the living roadmap and project-status page are authoritative; the original technical roadmap remains a high-level guide.
+- Reconciled the three-switch prompt mapping to specify Manual Scanning.
+- Fixed escaped newline artifacts in Markdown documentation and consolidated this Unreleased section.
 
-### Added
-- CVI-focused LLM development prompt library in `prompts/switchplay_cvi_llm_prompts.json`.
-- MkDocs Material documentation source and GitHub Actions Pages publishing workflow.
-- Living project goals, status, roadmap, accessibility principles, development setup, and LLM workflow documentation.
-- Contribution, community conduct, and security policies.
-
-### Status
-- The SwiftUI prototype remains an uncompiled starter until built with Xcode on macOS.
-- No physical iPad or external-switch validation is claimed.
-- GitHub Pages publication requires the repository Pages source to be set to **GitHub Actions**.
-
-## Updating this file
-Add a dated or versioned section near the top for each meaningful change. Summarize features, accessibility changes, fixes, documentation changes, and known limitations. Keep implementation status accurate.
+### Verification status
+- The prior documentation build/deploy run 42402479023 succeeded before the action-version upgrades. A new run is required to verify the upgraded workflow.
+- Swift formatting workflow runs 42402374179, 42402425701, and 42402478967 failed at strict lint on existing source-format violations. The workflow now installs and asserts swift-format 604.0.0; a passing lint run is still required.
+- No Xcode build, app runtime test, physical iPad test, physical-switch test, or CVI participatory evaluation was performed as part of this audit.
 
 ## 2026-11-07 — Swift contributor standards
 
