@@ -6,7 +6,7 @@ The repository includes a structured prompt library at [`prompts/switchplay_cvi_
 
 Run **P00 — Project-wide documentation, stage, and completion tracker** at the beginning and end of every meaningful LLM work session. P00 is the controlling instruction for repository inspection, task tracking, stage gates, documentation synchronization, manual verification, and handoff. Run it before a narrower prompt such as P04 or P08, and run it again after implementation so the records reflect the actual result.
 
-P00 requires the LLM to inspect the current repository rather than rely on chat history or an earlier summary. It must reconcile the README, roadmap, status page, change log, detailed documentation, source, tests, configuration, workflows, and relevant commits.
+P00 requires the LLM to inspect the current repository rather than rely on chat history or an earlier summary. It must reconcile the README, roadmap, status page, change log, repository audit, detailed documentation, source, tests, configuration, workflows, and relevant commits.
 
 ## Mandatory status vocabulary
 
