@@ -38,6 +38,7 @@ nav:
       - Current status: project-status.md
       - Roadmap: roadmap.md
       - Change history: https://github.com/mrhunsaker/Switch_Access_iPadOS_App/blob/main/CHANGES.md
+      - Repository audit: repository-audit.md
   - Accessibility:
       - CVI-centered principles: accessibility-principles.md
       - Switch Control design: ACCESSIBILITY_DESIGN.md
