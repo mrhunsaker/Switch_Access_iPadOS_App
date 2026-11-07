@@ -75,7 +75,7 @@ MkDocs Material 9.8.0 is the current pinned release. Upstream has announced end 
 ## Outstanding verification and user-owned work
 
 1. **CI-01 remains IMPLEMENTED_UNVERIFIED:** strict lint previously failed on source formatting violations. The new pinned formatter workflow must pass before this task is complete.
-2. **DOC-01 is VERIFIED_COMPLETE:** updated strict MkDocs build, artifact upload, and GitHub Pages deployment passed in run 42403559310 with Python 3.15.2, MkDocs Material 9.8.0, and the upgraded Actions.
+2. **DOC-01 is VERIFIED_COMPLETE:** updated strict MkDocs build, artifact upload, and GitHub Pages deployment passed in run 42403662715 with Python 3.15.2, MkDocs Material 9.8.0, and the upgraded Actions.
 3. The Swift source has not been compiled with Xcode. A Mac is still required.
 4. No physical iPad, physical-switch, VoiceOver, or CVI participatory validation is claimed.
 5. The app's iPadOS 17 deployment target and Swift 5 language mode are intentionally retained pending build evidence.
