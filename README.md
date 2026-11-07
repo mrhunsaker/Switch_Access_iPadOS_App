@@ -50,6 +50,7 @@ See:
 - [Living development roadmap](docs/roadmap.md)
 - [CVI-centered accessibility principles](docs/accessibility-principles.md)
 - [LLM-assisted development workflow](docs/llm-workflow.md)
+- [Repository consistency and toolchain audit](docs/repository-audit.md)
 
 ## Generate the Xcode project
 
