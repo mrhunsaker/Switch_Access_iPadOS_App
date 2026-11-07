@@ -91,7 +91,7 @@ Every LLM work session should end with:
 
 Do not claim a build, deployment, device test, user study, or manual check succeeded unless the result was actually observed and documented.
 
-## Repository discipline
+## Swift code consistency\n\nAll Swift changes must follow the repository-root [CODE_STYLE.md](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/blob/main/CODE_STYLE.md) and checked-in [.swift-format configuration](https://github.com/mrhunsaker/Switch_Access_iPadOS_App/blob/main/.swift-format). Run `swift-format lint --strict --recursive SwitchPlay` when the tool is available, report the exact result, and keep style validation distinct from compilation and device testing. P00 and P08 enforce this standard for LLM-assisted work.\n\n## Repository discipline
 
 Inspect existing files before editing. Review generated code and documentation like any other contribution. Do not provide private participant information to a model. Do not commit changes unless explicitly authorized. Keep the roadmap and [current status](project-status.md) synchronized with actual evidence.
 
