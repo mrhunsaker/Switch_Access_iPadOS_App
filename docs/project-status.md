@@ -26,7 +26,7 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 
 | Task ID | Status | Owner | Evidence / next action |
 | --- | --- | --- | --- |
-| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow now installs and asserts swift-format 604.0.0. Runs 42402374179, 42402425701, 42402478967, 42403314021, 42403378523, and latest run 42403419130 failed strict lint on existing source formatting. Run 42403419130 installed and verified swift-format 604.0.0 before reporting indentation, line-length, and trailing-comma violations. Format `SwitchPlay`, rerun, and record a passing run. |
+| CI-01 | IMPLEMENTED_UNVERIFIED | Joint | Workflow now installs and asserts swift-format 604.0.0. Runs 42402374179, 42402425701, 42402478967, 42403314021, 42403378523, and latest run 42403519607 failed strict lint on existing source formatting. Run 42403419130 installed and verified swift-format 604.0.0 before reporting indentation, line-length, and trailing-comma violations. Format `SwitchPlay`, rerun, and record a passing run. |
 | ST0-01 | BLOCKED | User | Obtain Mac access; report macOS and Xcode versions. |
 | ST0-02–ST0-07 | BLOCKED | Joint | Depend on ST0-01; complete setup, project generation, signing, build, install, and launch in sequence. |
 | ST1-01–ST1-07 | BLOCKED | Joint | Await successful Stage 0 build and physical iPad validation. |
@@ -59,7 +59,7 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 | Swift contributor standards | CODE_STYLE.md, root .swift-format, and pinned 604.0.0 CI workflow | Workflow updated; source lint remains failing pending reformat |
 
 ## Not yet verified
-- The latest observed Swift formatting run (42403419130) installed and verified swift-format 604.0.0 successfully, then failed strict lint on existing source-format violations. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
+- The latest observed Swift formatting run (42403519607) installed and verified swift-format 604.0.0 successfully, then failed strict lint on existing source-format violations. Earlier runs used the Xcode-bundled Swift-format 6.3.0; the workflow has since been updated to install and assert 604.0.0, so its new run must be evaluated separately.
 - The updated documentation workflow has not yet been verified after upgrading its GitHub Actions to current major releases and pinning MkDocs Material 9.8.0. Previous build/deploy run 42402479023 succeeded.
 - Whether the source compiles with the current Xcode and iPadOS SDK remains unverified.
 - Whether the app installs and launches on a physical iPad remains unverified.
