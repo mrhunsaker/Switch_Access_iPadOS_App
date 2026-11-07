@@ -36,6 +36,8 @@ Xcode and the iPadOS SDK require macOS. Source files can be edited on Windows, b
 
 The project documentation is published with MkDocs Material through GitHub Actions: [Open the SwitchPlay documentation site](https://mrhunsaker.github.io/Switch_Access_iPadOS_App/). Documentation source is maintained in `docs/`.
 
+The LLM prompt library includes **P00**, the required project-wide documentation and progress-tracking prompt. It enforces stable task IDs, explicit stage statuses, synchronized documentation, and user-confirmed manual verification gates. See the [LLM workflow](docs/llm-workflow.md) before using other prompts.
+
 See:
 - [Development roadmap](docs/DEVELOPMENT_ROADMAP.md)
 - [Build and physical-device testing](docs/BUILD_AND_DEVICE_TESTING.md)
