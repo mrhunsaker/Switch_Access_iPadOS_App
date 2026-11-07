@@ -13,7 +13,6 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | Stage | Stage status | Task IDs | Current state / next action |
 | --- | --- | --- | --- |
 | Contributor CI | IMPLEMENTED_UNVERIFIED | CI-01 | Swift-format workflow committed; first GitHub Actions run must be inspected before marking verified. |
-| --- | --- | --- | --- |
 | 0 — Establish a native build | BLOCKED | ST0-01–ST0-07 | ST0-01 requires user to obtain Mac access; subsequent setup/build tasks depend on it. |
 | 1 — Verify existing prototype | BLOCKED | ST1-01–ST1-07 | Requires Stage 0 build/install and physical iPad access. |
 | 2 — CVI accessibility foundation | NOT_STARTED | CVI-01–CVI-07 | Requires participatory requirements work; do not finalize universal visual defaults. |
@@ -27,7 +26,6 @@ Status is evidence-based. This tracker is the live summary; detailed acceptance 
 | Task ID | Status | Owner | Evidence / next action |
 | --- | --- | --- | --- |
 | CI-01 | IMPLEMENTED_UNVERIFIED | Joint | `.github/workflows/swift-format.yml` committed; inspect first workflow run and record pass/fail. |
-| --- | --- | --- | --- |
 | ST0-01 | BLOCKED | User | Obtain Mac access; report macOS and Xcode versions. |
 | ST0-02–ST0-07 | BLOCKED | Joint | Depend on ST0-01; complete setup, project generation, signing, build, install, and launch in sequence. |
 | ST1-01–ST1-07 | BLOCKED | Joint | Await successful Stage 0 build and physical iPad validation. |
@@ -72,8 +70,8 @@ Confirm whether a Mac is available. If yes, report its macOS version and Xcode v
 5. Build and install the prototype on a physical iPad.
 6. Resolve compiler and runtime errors before expanding features.
 7. Test home, matching, and piano with touch and system-wide Switch Control.
-7. Record device, iPadOS, switch hardware, assignments, scan style, outcomes, and defects.
-8. Begin CVI-centered requirements and participatory design before finalizing visual defaults.
+8. Record device, iPadOS, switch hardware, assignments, scan style, outcomes, and defects.
+9. Begin CVI-centered requirements and participatory design before finalizing visual defaults.
 
 See [Development environment setup](development-environment.md) and [Build and device testing](BUILD_AND_DEVICE_TESTING.md).
 
